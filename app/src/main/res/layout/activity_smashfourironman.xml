@@ -18,9 +18,20 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="exclude characters"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/s4imnumber_char"
+        android:id="@+id/s4imexclude_button"
+        android:onClick="Exclude"
+        />
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/s4imnumber_char"
+        android:layout_below="@+id/s4imexclude_button"
         android:id="@+id/s4imstart_button"
         android:text="Start"
         />

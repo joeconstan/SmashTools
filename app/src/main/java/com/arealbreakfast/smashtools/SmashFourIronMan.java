@@ -1,9 +1,11 @@
 package com.arealbreakfast.smashtools;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 public class SmashFourIronMan extends AppCompatActivity{
 
@@ -14,5 +16,11 @@ public class SmashFourIronMan extends AppCompatActivity{
 
 
 
+
+    }
+
+    public void Exclude(View view){
+        Intent intent = new Intent(view.getContext(), Exclude.class);
+        startActivity(intent);
     }
 }
