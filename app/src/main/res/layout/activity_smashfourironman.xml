@@ -34,6 +34,7 @@
         android:layout_below="@+id/s4imexclude_button"
         android:id="@+id/s4imstart_button"
         android:text="Start"
+        android:onClick="Start"
         />
 
 

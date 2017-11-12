@@ -28,6 +28,9 @@
         <activity android:name=".Exclude">
 
         </activity>
+        <activity android:name=".Results">
+
+        </activity>
     </application>
 
 </manifest>
