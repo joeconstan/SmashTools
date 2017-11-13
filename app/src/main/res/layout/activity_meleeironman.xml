@@ -16,15 +16,28 @@
         android:hint="Number of characters"
         android:inputType="number" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Number of players"
+        android:inputType="number"
+        android:id="@+id/mimnumber_play"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/mimnumber_char"
+        android:layout_marginTop="10dp"
+        />
+
 
     <Button
         android:id="@+id/mimexclude_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mimnumber_char"
+        android:layout_below="@+id/mimnumber_play"
         android:layout_centerHorizontal="true"
         android:onClick="Exclude"
-        android:text="exclude characters" />
+        android:text="exclude characters"
+        android:layout_marginTop="15dp"
+        />
 
 
     <Button

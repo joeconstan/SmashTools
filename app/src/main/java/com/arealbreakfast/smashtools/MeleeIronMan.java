@@ -26,12 +26,14 @@ public class MeleeIronMan extends AppCompatActivity {
     }
 
     public void Start(View view) {
+        EditText players = (EditText) findViewById(R.id.mimnumber_play);
         //pick characters randomly and display in Results activity
         EditText num = (EditText) findViewById(R.id.mimnumber_char);
         int x = Integer.parseInt(num.getText().toString());
+        int y = Integer.parseInt(players.getText().toString());
         ArrayList<Integer> chosen_chars = new ArrayList<>(1);
         Random randomGenerator = new Random();
-        for (int i = 0; i < x; i++) {
+        for (int i = 0; i < x*y; i++) {
             //pick a new character
             chosen_chars.add(randomGenerator.nextInt(25));
             //need to remove duplicates as well by adding to hash set and then if its smaller than before, add another ad infitum until its correct size.
@@ -39,6 +41,7 @@ public class MeleeIronMan extends AppCompatActivity {
 
         Intent intent = new Intent(view.getContext(), Results.class);
         intent.putExtra("chars", chosen_chars);
+        intent.putExtra("players", Integer.parseInt(players.getText().toString()));
         intent.putExtra("type", 1);
         startActivity(intent);
     }

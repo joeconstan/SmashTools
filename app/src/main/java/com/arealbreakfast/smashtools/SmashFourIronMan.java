@@ -13,6 +13,7 @@ import java.util.Random;
 
 public class SmashFourIronMan extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,21 +28,23 @@ public class SmashFourIronMan extends AppCompatActivity {
     }
 
     public void Start(View view) {
+        EditText players = (EditText) findViewById(R.id.s4imnumber_play);
         //pick characters randomly and display in Results activity
         EditText num = (EditText) findViewById(R.id.s4imnumber_char);
         int x = Integer.parseInt(num.getText().toString());
+        int y = Integer.parseInt(players.getText().toString());
         ArrayList<Integer> chosen_chars = new ArrayList<>(1);
         Random randomGenerator = new Random();
-        for (int i = 0; i < x; i++) {
+        for (int i = 0; i < x*y; i++) {
             //pick a new character
             chosen_chars.add(randomGenerator.nextInt(56));
             //need to remove duplicates as well by adding to hash set and then if its smaller than before, add another ad infitum until its correct size.
         }
 
-        EditText players = (EditText) findViewById(R.id.s4imnumber_play);
+
         Intent intent = new Intent(view.getContext(), Results.class);
         intent.putExtra("chars", chosen_chars);
-        intent.putExtra("players", players.getText());
+        intent.putExtra("players", Integer.parseInt(players.getText().toString()));
         intent.putExtra("type", 0);
         startActivity(intent);
     }

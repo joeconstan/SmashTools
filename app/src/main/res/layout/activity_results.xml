@@ -4,15 +4,16 @@
     android:layout_height="match_parent"
     android:background="@drawable/background1"
     android:id="@+id/parentlinlay"
+    android:orientation="vertical"
     >
 
-    <ScrollView
+    <!--<ScrollView
         android:id="@+id/scrollView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-    </ScrollView>
+    </ScrollView>-->
 
 
 </LinearLayout>
