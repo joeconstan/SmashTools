@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background1"
+    >
 
 
+    <EditText
+        android:id="@+id/mimnumber_char"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:hint="Number of characters"
+        android:inputType="number" />
 
-</LinearLayout>
+
+    <Button
+        android:id="@+id/mimexclude_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mimnumber_char"
+        android:layout_centerHorizontal="true"
+        android:onClick="Exclude"
+        android:text="exclude characters" />
+
+
+    <Button
+        android:id="@+id/mimstart_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mimexclude_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:onClick="Start"
+        android:text="Start" />
+
+
+</RelativeLayout>

@@ -10,7 +10,9 @@
     android:orientation="vertical"
     android:padding="10dp"
     android:stretchMode="columnWidth"
-    android:verticalSpacing="10dp">
+    android:verticalSpacing="10dp"
+    android:background="@drawable/background1"
+    >
 
 
 </GridView>

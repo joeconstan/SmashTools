@@ -34,12 +34,14 @@ public class SmashFourIronMan extends AppCompatActivity {
         Random randomGenerator = new Random();
         for (int i = 0; i < x; i++) {
             //pick a new character
-            chosen_chars.add(randomGenerator.nextInt(57));
+            chosen_chars.add(randomGenerator.nextInt(56));
             //need to remove duplicates as well by adding to hash set and then if its smaller than before, add another ad infitum until its correct size.
         }
 
+        EditText players = (EditText) findViewById(R.id.s4imnumber_play);
         Intent intent = new Intent(view.getContext(), Results.class);
         intent.putExtra("chars", chosen_chars);
+        intent.putExtra("players", players.getText());
         intent.putExtra("type", 0);
         startActivity(intent);
     }

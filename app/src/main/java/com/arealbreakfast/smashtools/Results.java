@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import java.util.ArrayList;
 
@@ -20,20 +21,26 @@ public class Results extends AppCompatActivity {
         //display characters that the/each person got
         Intent intent = getIntent();
         ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
-        int x = intent.getIntExtra("type", 0); //0 - smash4, 1- melee //todo: pass this extra
-
+        int x = intent.getIntExtra("type", 0); //0 - smash4, 1- melee
+        int y = intent.getIntExtra("players", 2);
         int num = chars.size();
-        //first.setImageResource(mThumbIds[chars.get(0)]);
-        LinearLayout linlay = (LinearLayout) findViewById(R.id.linlay);
-        for (int i = 0; i < num; i++) {
-            ImageView image = new ImageView(Results.this);
-            if (x==0)
-                image.setImageResource(mThumbIdss4[chars.get(i)]);
-            else
-                image.setImageResource(mThumbIdsm[chars.get(i)]);
-            LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
-            image.setLayoutParams(layoutParams);
-            linlay.addView(image);
+
+        //dynamically create linear layouts and images for them depending on player num and character num
+        LinearLayout parentlinlay = (LinearLayout) findViewById(R.id.parentlinlay);
+        for (int j = 0; j < y; j++) {
+            LinearLayout linearLayout = new LinearLayout(this);
+            linearLayout.setId(j + 100);
+            for (int i = 0; i < num; i++) {
+                ImageView image = new ImageView(Results.this);
+                if (x == 0)
+                    image.setImageResource(mThumbIdss4[chars.get(i)]);
+                else
+                    image.setImageResource(mThumbIdsm[chars.get(i)]);
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
+                image.setLayoutParams(layoutParams);
+                linearLayout.addView(image);
+            }
+            parentlinlay.addView(linearLayout);
         }
 
 
