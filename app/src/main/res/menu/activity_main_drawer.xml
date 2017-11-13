@@ -4,20 +4,12 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_smash4IM"
-            android:icon="@drawable/smash4imicon"
+            android:icon="@drawable/smash4imicon2"
             android:title="Smash 4 Ironman" />
         <item
             android:id="@+id/nav_meleeIM"
             android:icon="@drawable/meleeimicon"
             android:title="Melee Ironman" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="Placeholder" />
-        <item
-            android:id="@+id/nav_manage"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="Placeholder" />
     </group>
 
 

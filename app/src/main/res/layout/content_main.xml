@@ -4,36 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background1"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.arealbreakfast.smashtools.MainActivity"
-    tools:showIn="@layout/app_bar_main"
-    android:background="@drawable/background1"
-    >
+    tools:showIn="@layout/app_bar_main">
+
+
 
 
     <Button
+        android:id="@+id/s4IMButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/s4IMButton"
-        android:text="Smash 4 Iron Man"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="100dp"
         android:onClick="Smash4IM"
-        />
+        android:text="Smash 4 Iron Man" />
 
     <Button
-        android:layout_marginTop="100dp"
-        android:layout_marginRight="20dp"
-        android:layout_toRightOf="@+id/s4IMButton"
-        android:layout_marginLeft="15dp"
+        android:id="@+id/mIMButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/mIMButton"
-        android:text="Melee Iron Man"
         android:layout_centerHorizontal="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="100dp"
+        android:layout_toRightOf="@+id/s4IMButton"
         android:onClick="MeleeIM"
-        />
-
+        android:text="Melee Iron Man" />
 
 
 </RelativeLayout>

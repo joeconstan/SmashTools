@@ -23,7 +23,7 @@ public class Results extends AppCompatActivity {
         //display characters that the/each person got
         Intent intent = getIntent();
         ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
-        int x = intent.getIntExtra("type", 0); //0 - smash4, 1- melee
+        int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee
         int p_num = intent.getIntExtra("players", 2);
         int c_num = chars.size()/p_num; //num of chars per person
 
