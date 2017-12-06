@@ -23,10 +23,6 @@ public class SmashFourIronMan extends AppCompatActivity {
 
     }
 
-    public void Exclude(View view) {
-        Intent intent = new Intent(view.getContext(), Exclude.class);
-        startActivity(intent);
-    }
 
     public void Start(View view) {
         EditText players = (EditText) findViewById(R.id.s4imnumber_play);
@@ -42,7 +38,7 @@ public class SmashFourIronMan extends AppCompatActivity {
             //pick a new character
             ranNum = randomGenerator.nextInt(56);
             if (!chosen_chars.contains(ranNum))
-                chosen_chars.add(randomGenerator.nextInt(56));
+                chosen_chars.add(ranNum);
         }
         //need to remove duplicates as well by adding to hash set and then if its smaller than before, add another ad infitum until its correct size.
 

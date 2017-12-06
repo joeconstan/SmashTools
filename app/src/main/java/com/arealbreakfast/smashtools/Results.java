@@ -26,11 +26,6 @@ public class Results extends AppCompatActivity {
         Intent intent = getIntent();
         ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
 
-       /* HashSet<Integer> hashSet = new HashSet<>();
-        hashSet.addAll(chars);
-        chars.clear();
-        chars.addAll(hashSet);*/ //todo: needs to add in the missing ones. also only do this for each individ person? not alltogether.
-
         int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee
         int p_num = intent.getIntExtra("players", 2);
         int c_num = chars.size()/p_num; //num of chars per person

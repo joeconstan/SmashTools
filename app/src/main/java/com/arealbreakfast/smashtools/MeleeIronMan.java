@@ -20,10 +20,6 @@ public class MeleeIronMan extends AppCompatActivity {
     }
 
 
-    public void Exclude(View view) {
-        Intent intent = new Intent(view.getContext(), Exclude.class);
-        startActivity(intent);
-    }
 
     public void Start(View view) {
         EditText players = (EditText) findViewById(R.id.mimnumber_play);
@@ -33,11 +29,15 @@ public class MeleeIronMan extends AppCompatActivity {
         int y = Integer.parseInt(players.getText().toString());
         ArrayList<Integer> chosen_chars = new ArrayList<>(1);
         Random randomGenerator = new Random();
-        for (int i = 0; i < x*y; i++) {
+        int ranNum;
+
+        while (chosen_chars.size() < x * y) {
             //pick a new character
-            chosen_chars.add(randomGenerator.nextInt(25));
-            //need to remove duplicates as well by adding to hash set and then if its smaller than before, add another ad infitum until its correct size.
+            ranNum = randomGenerator.nextInt(25);
+            if (!chosen_chars.contains(ranNum))
+                chosen_chars.add(ranNum);
         }
+
 
         Intent intent = new Intent(view.getContext(), Results.class);
         intent.putExtra("chars", chosen_chars);

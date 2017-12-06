@@ -7,25 +7,57 @@
     >
 
 
-    <EditText
-        android:id="@+id/mimnumber_char"
+
+
+
+
+
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:hint="Number of characters"
-        android:inputType="number" />
+        android:text="Character #:"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="60dp"
+        android:id="@+id/mimnumber_char_title"
+        />
+
+
 
     <EditText
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:id="@+id/mimnumber_char"
+        android:text="4"
+        android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/mimnumber_char_title"
+        android:layout_alignBottom="@+id/mimnumber_char_title"
+        android:layout_marginLeft="30dp"
+        />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Number of players"
+        android:text="Player #:"
+        android:id="@+id/mimnumber_play_title"
+        android:layout_below="@id/mimnumber_char_title"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="60dp"
+        />
+
+    <EditText
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
         android:inputType="number"
         android:id="@+id/mimnumber_play"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/mimnumber_char"
+        android:text="2"
         android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/mimnumber_play_title"
+        android:layout_alignBottom="@+id/mimnumber_play_title"
+        android:layout_marginLeft="53dp"
         />
+
 
 
 
@@ -38,6 +70,10 @@
         android:layout_marginTop="50dp"
         android:onClick="Start"
         android:text="Start" />
+
+
+
+
 
 
 </RelativeLayout>
