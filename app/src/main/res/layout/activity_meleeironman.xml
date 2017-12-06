@@ -28,23 +28,12 @@
         />
 
 
-    <Button
-        android:id="@+id/mimexclude_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/mimnumber_play"
-        android:layout_centerHorizontal="true"
-        android:onClick="Exclude"
-        android:text="exclude characters"
-        android:layout_marginTop="15dp"
-        />
-
 
     <Button
         android:id="@+id/mimstart_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mimexclude_button"
+        android:layout_below="@+id/mimnumber_play"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
         android:onClick="Start"

@@ -6,37 +6,46 @@
 
 
 
-    <EditText
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Number of characters"
+        android:text="Character #:"
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="60dp"
+        android:id="@+id/s4imnumber_char_title"
+        />
+
+
+    <EditText
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
         android:inputType="number"
         android:id="@+id/s4imnumber_char"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
+        android:layout_toRightOf="@+id/s4imnumber_char_title"
+        android:layout_alignBottom="@+id/s4imnumber_char_title"
+        android:layout_marginLeft="30dp"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Player #:"
+        android:id="@+id/s4imnumber_play_title"
+        android:layout_below="@id/s4imnumber_char_title"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="60dp"
+        />
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:hint="Number of players"
         android:inputType="number"
         android:id="@+id/s4imnumber_play"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/s4imnumber_char"
         android:layout_marginTop="10dp"
-        />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="exclude characters"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/s4imnumber_play"
-        android:id="@+id/s4imexclude_button"
-        android:onClick="Exclude"
-        android:layout_marginTop="15dp"
+        android:layout_toRightOf="@+id/s4imnumber_play_title"
+        android:layout_alignBottom="@+id/s4imnumber_play_title"
+        android:layout_marginLeft="53dp"
         />
 
 
@@ -45,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:layout_below="@+id/s4imexclude_button"
+        android:layout_below="@+id/s4imnumber_play"
         android:id="@+id/s4imstart_button"
         android:text="Start"
         android:onClick="Start"

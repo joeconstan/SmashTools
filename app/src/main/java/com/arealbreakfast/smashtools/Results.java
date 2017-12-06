@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 
 
 public class Results extends AppCompatActivity {
@@ -23,6 +25,12 @@ public class Results extends AppCompatActivity {
         //display characters that the/each person got
         Intent intent = getIntent();
         ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
+
+       /* HashSet<Integer> hashSet = new HashSet<>();
+        hashSet.addAll(chars);
+        chars.clear();
+        chars.addAll(hashSet);*/ //todo: needs to add in the missing ones. also only do this for each individ person? not alltogether.
+
         int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee
         int p_num = intent.getIntExtra("players", 2);
         int c_num = chars.size()/p_num; //num of chars per person
@@ -45,10 +53,16 @@ public class Results extends AppCompatActivity {
                 linearLayout.addView(image);
                 l++;
             }
+
+
+            HorizontalScrollView scroll = new HorizontalScrollView(this);
+
+
             LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
             lp.setMargins(10, 0, 0, 140);
             linearLayout.setLayoutParams(lp);
-            parentlinlay.addView(linearLayout);
+            scroll.addView(linearLayout);
+            parentlinlay.addView(scroll);
         }
 
 
