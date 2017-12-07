@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:inputType="number"
         android:id="@+id/mimnumber_char"
-        android:text="4"
+        android:text="5"
         android:layout_marginTop="50dp"
         android:layout_toRightOf="@+id/mimnumber_char_title"
         android:layout_alignBottom="@+id/mimnumber_char_title"
