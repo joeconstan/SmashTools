@@ -10,52 +10,105 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Character #:"
+        android:textSize="30sp"
         android:layout_marginTop="150dp"
         android:layout_marginLeft="60dp"
         android:id="@+id/s4imnumber_char_title"
         />
 
 
-    <EditText
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/increase_char"
+        android:src="@drawable/ic_action_name"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@+id/s4imnumber_char"
+        android:layout_marginLeft="246dp"
+        />
+
+
+    <TextView
         android:layout_width="40dp"
         android:layout_height="wrap_content"
-        android:inputType="number"
         android:id="@+id/s4imnumber_char"
         android:text="5"
-        android:layout_marginTop="50dp"
+        android:textSize="30sp"
         android:layout_toRightOf="@+id/s4imnumber_char_title"
         android:layout_alignBottom="@+id/s4imnumber_char_title"
         android:layout_marginLeft="30dp"
         />
 
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/decrease_char"
+        android:src="@drawable/arrow_down"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/s4imnumber_char"
+        android:layout_marginLeft="246dp"
+        />
+
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Player #:"
+        android:textSize="30sp"
         android:id="@+id/s4imnumber_play_title"
         android:layout_below="@id/s4imnumber_char_title"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="150dp"
         android:layout_marginLeft="60dp"
         />
 
-    <EditText
+
+
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/increase_play"
+        android:src="@drawable/ic_action_name"
+        android:layout_above="@+id/s4imnumber_play"
+        android:layout_marginLeft="246dp"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
         android:layout_width="40dp"
         android:layout_height="wrap_content"
         android:inputType="number"
         android:id="@+id/s4imnumber_play"
         android:text="2"
-        android:layout_marginTop="10dp"
-        android:layout_toRightOf="@+id/s4imnumber_play_title"
+        android:textSize="30sp"
         android:layout_alignBottom="@+id/s4imnumber_play_title"
-        android:layout_marginLeft="53dp"
+        android:layout_alignStart="@+id/s4imnumber_char"
         />
+
+
+
+    <ImageButton
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/decrease_play"
+        android:src="@drawable/arrow_down"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/s4imnumber_play"
+        android:layout_marginLeft="246dp" />
+
+
+
+
+
 
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="90dp"
         android:layout_below="@+id/s4imnumber_play"
         android:id="@+id/s4imstart_button"
         android:text="Start"
