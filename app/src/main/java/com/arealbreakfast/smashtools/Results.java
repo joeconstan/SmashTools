@@ -27,7 +27,7 @@ public class Results extends AppCompatActivity {
             boolsmhasx[i] = false;
         }
         for (int i=0;i<boolss4hasx.length;i++){
-            boolsmhasx[i] = false;
+            boolss4hasx[i] = false;
         }
 
 
@@ -50,7 +50,6 @@ public class Results extends AppCompatActivity {
                 final ImageView image = new ImageView(Results.this);
                 if (x == 0) {
                     image.setImageResource(mThumbIdss4[chars.get(l)]); //0, 1, 2, 3
-                    image.setId(100 + i);
                 }
                 else {
                     image.setImageResource(mThumbIdsm[chars.get(l)]);
@@ -58,7 +57,7 @@ public class Results extends AppCompatActivity {
                     image.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (boolsmhasx[finalL])
+                            if (!boolsmhasx[finalL])
                                 image.setImageResource(mThumbIdsmx[chars.get(finalL)]);
                             else
                                 image.setImageResource(mThumbIdsm[chars.get(finalL)]);
@@ -97,6 +96,7 @@ public class Results extends AppCompatActivity {
             R.drawable.bowserjr, R.drawable.captainfalcon,
             R.drawable.charizard, R.drawable.cloud,
             R.drawable.corrin, R.drawable.darkpit,
+            R.drawable.diddy, R.drawable.donkeykong,
             R.drawable.drmario, R.drawable.duckhunt,
             R.drawable.falco, R.drawable.fox,
             R.drawable.ganon, R.drawable.greninja,
@@ -123,6 +123,41 @@ public class Results extends AppCompatActivity {
             R.drawable.zelda, R.drawable.zss
     };
 
+
+    private Integer[] mThumbIdss4x = {//missing the dks
+            R.drawable.bayo, R.drawable.bowser,
+            R.drawable.bowserjr, R.drawable.captainfalcon,
+            R.drawable.charizard, R.drawable.cloud,
+            R.drawable.corrin, R.drawable.darkpit,
+            R.drawable.diddy, R.drawable.donkeykong,
+            R.drawable.drmario, R.drawable.duckhunt,
+            R.drawable.falco, R.drawable.fox,
+            R.drawable.ganon, R.drawable.greninja,
+            R.drawable.ike, R.drawable.kingddd,
+            R.drawable.kirby, R.drawable.link,
+            R.drawable.littlemac, R.drawable.lucario,
+            R.drawable.lucas, R.drawable.lucina,
+            R.drawable.luigi, R.drawable.mario,
+            R.drawable.marth, R.drawable.megaman,
+            R.drawable.metaknight, R.drawable.mewtwo,
+            R.drawable.miibrawler, R.drawable.miigunner,
+            R.drawable.miiswordfighter, R.drawable.mrgnw,
+            R.drawable.ness, R.drawable.olimar,
+            R.drawable.pacman, R.drawable.palutena,
+            R.drawable.peach, R.drawable.pikachupic,
+            R.drawable.pit, R.drawable.puff,
+            R.drawable.rob, R.drawable.robin,
+            R.drawable.rosalina, R.drawable.roy,
+            R.drawable.ryupic, R.drawable.samus,
+            R.drawable.sheik, R.drawable.shulk,
+            R.drawable.sonic, R.drawable.toonlink,
+            R.drawable.villager, R.drawable.wario,
+            R.drawable.wft, R.drawable.yoshi,
+            R.drawable.zelda, R.drawable.zss
+    };
+
+
+
     private Integer[] mThumbIdsm = {
             R.drawable.mariom, R.drawable.luigim,
             R.drawable.yoshim, R.drawable.donkeykongm,
@@ -140,19 +175,19 @@ public class Results extends AppCompatActivity {
     };
 
     private Integer[] mThumbIdsmx = {
-            R.drawable.mariom, R.drawable.luigim,
-            R.drawable.yoshim, R.drawable.donkeykongm,
-            R.drawable.linkm, R.drawable.samusm,
-            R.drawable.kirbym, R.drawable.foxm,
-            R.drawable.pikachum, R.drawable.jigglypuffm,
-            R.drawable.nessm, R.drawable.peachm,
-            R.drawable.younglinkm, R.drawable.bowsermx,
-            R.drawable.ganonm, R.drawable.drmariom,
-            R.drawable.sheikm, R.drawable.zeldam,
-            R.drawable.falcom, R.drawable.mewtwom,
-            R.drawable.pichum, R.drawable.iceclimbersm,
-            R.drawable.roym, R.drawable.marthm,
-            R.drawable.mrgnwm
+            R.drawable.mariomx, R.drawable.luigimx,
+            R.drawable.yoshimx, R.drawable.donkeykongmx,
+            R.drawable.linkmx, R.drawable.samusmx,
+            R.drawable.kirbymx, R.drawable.foxmx,
+            R.drawable.pikachumx, R.drawable.jigglypuffmx,
+            R.drawable.nessmx, R.drawable.peachmx,
+            R.drawable.younglinkmx, R.drawable.bowsermx,
+            R.drawable.ganonmx, R.drawable.drmariomx,
+            R.drawable.sheikmx, R.drawable.zeldamx,
+            R.drawable.falcomx, R.drawable.mewtwomx,
+            R.drawable.pichumx, R.drawable.iceclimbersmx,
+            R.drawable.roymx, R.drawable.marthmx,
+            R.drawable.mrgnwmx
     };
 
 
