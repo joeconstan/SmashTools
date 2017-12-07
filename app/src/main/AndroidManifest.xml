@@ -18,18 +18,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SmashFourIronMan">
-
-        </activity>
-        <activity android:name=".MeleeIronMan">
-
-        </activity>
-        <activity android:name=".Exclude">
-
-        </activity>
-        <activity android:name=".Results">
-
-        </activity>
+        <activity android:name=".SmashFourIronMan" />
+        <activity android:name=".MeleeIronMan" />
+        <activity android:name=".Exclude" />
+        <activity android:name=".Results" />
+        <activity android:name=".ProjectMIronMan" />
+        <activity android:name=".BrawlIronMan"></activity>
     </application>
 
 </manifest>

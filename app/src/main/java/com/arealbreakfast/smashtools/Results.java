@@ -50,6 +50,17 @@ public class Results extends AppCompatActivity {
                 final ImageView image = new ImageView(Results.this);
                 if (x == 0) {
                     image.setImageResource(mThumbIdss4[chars.get(l)]); //0, 1, 2, 3
+                    final int finalL = l;
+                    image.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!boolss4hasx[finalL])
+                                image.setImageResource(mThumbIdss4x[chars.get(finalL)]);
+                            else
+                                image.setImageResource(mThumbIdss4[chars.get(finalL)]);
+                            boolss4hasx[finalL] = !boolss4hasx[finalL];
+                        }
+                    });
                 }
                 else {
                     image.setImageResource(mThumbIdsm[chars.get(l)]);
@@ -125,35 +136,35 @@ public class Results extends AppCompatActivity {
 
 
     private Integer[] mThumbIdss4x = {//missing the dks
-            R.drawable.bayo, R.drawable.bowser,
-            R.drawable.bowserjr, R.drawable.captainfalcon,
-            R.drawable.charizard, R.drawable.cloud,
-            R.drawable.corrin, R.drawable.darkpit,
-            R.drawable.diddy, R.drawable.donkeykong,
-            R.drawable.drmario, R.drawable.duckhunt,
-            R.drawable.falco, R.drawable.fox,
-            R.drawable.ganon, R.drawable.greninja,
-            R.drawable.ike, R.drawable.kingddd,
-            R.drawable.kirby, R.drawable.link,
-            R.drawable.littlemac, R.drawable.lucario,
-            R.drawable.lucas, R.drawable.lucina,
-            R.drawable.luigi, R.drawable.mario,
-            R.drawable.marth, R.drawable.megaman,
-            R.drawable.metaknight, R.drawable.mewtwo,
-            R.drawable.miibrawler, R.drawable.miigunner,
-            R.drawable.miiswordfighter, R.drawable.mrgnw,
-            R.drawable.ness, R.drawable.olimar,
-            R.drawable.pacman, R.drawable.palutena,
-            R.drawable.peach, R.drawable.pikachupic,
-            R.drawable.pit, R.drawable.puff,
-            R.drawable.rob, R.drawable.robin,
-            R.drawable.rosalina, R.drawable.roy,
-            R.drawable.ryupic, R.drawable.samus,
-            R.drawable.sheik, R.drawable.shulk,
-            R.drawable.sonic, R.drawable.toonlink,
-            R.drawable.villager, R.drawable.wario,
-            R.drawable.wft, R.drawable.yoshi,
-            R.drawable.zelda, R.drawable.zss
+            R.drawable.bayox, R.drawable.bowserx,
+            R.drawable.bowserjrx, R.drawable.captainfalconx,
+            R.drawable.charizardx, R.drawable.cloudx,
+            R.drawable.corrinx, R.drawable.darkpitx,
+            R.drawable.diddyx, R.drawable.donkeykongx,
+            R.drawable.drmariox, R.drawable.duckhuntx,
+            R.drawable.falcox, R.drawable.foxx,
+            R.drawable.ganonx, R.drawable.greninjax,
+            R.drawable.ikex, R.drawable.kingdddx,
+            R.drawable.kirbyx, R.drawable.linkx,
+            R.drawable.littlemacx, R.drawable.lucariox,
+            R.drawable.lucasx, R.drawable.lucinax,
+            R.drawable.luigix, R.drawable.mariox,
+            R.drawable.marthx, R.drawable.megamanx,
+            R.drawable.metaknightx, R.drawable.mewtwox,
+            R.drawable.miibrawlerx, R.drawable.miigunnerx,
+            R.drawable.miiswordfighterx, R.drawable.mrgnwx,
+            R.drawable.nessx, R.drawable.olimarx,
+            R.drawable.pacmanx, R.drawable.palutenax,
+            R.drawable.peachx, R.drawable.pikachupicx,
+            R.drawable.pitx, R.drawable.puffx,
+            R.drawable.robx, R.drawable.robinx,
+            R.drawable.rosalinax, R.drawable.royx,
+            R.drawable.ryupicx, R.drawable.samusx,
+            R.drawable.sheikx, R.drawable.shulkx,
+            R.drawable.sonicx, R.drawable.toonlinkx,
+            R.drawable.villagerx, R.drawable.wariox,
+            R.drawable.wftx, R.drawable.yoshix,
+            R.drawable.zeldax, R.drawable.zssx
     };
 
 

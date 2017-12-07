@@ -38,6 +38,36 @@
         />
 
 
+    <Button
+        android:id="@+id/pmIMButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/mIMButton"
+        android:layout_marginTop="5dp"
+        android:onClick="ProjectMIM"
+        android:text="Project M Iron Man"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:background="@drawable/meleebackground"
+        />
+
+    <Button
+        android:id="@+id/bIMButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@+id/pmIMButton"
+        android:layout_marginTop="5dp"
+        android:onClick="BrawlIM"
+        android:text="Brawl Iron Man"
+        android:textColor="#FFFFFF"
+        android:textSize="20dp"
+        android:background="@drawable/meleebackground"
+        />
+
+
+
 
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
