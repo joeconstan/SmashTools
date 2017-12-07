@@ -82,7 +82,6 @@ public class SmashFourIronMan extends AppCompatActivity {
             if (!chosen_chars.contains(ranNum))
                 chosen_chars.add(ranNum);
         }
-        //need to remove duplicates as well by adding to hash set and then if its smaller than before, add another ad infitum until its correct size.
 
 
         Intent intent = new Intent(view.getContext(), Results.class);

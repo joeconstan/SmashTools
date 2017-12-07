@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -22,9 +23,17 @@ public class Results extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
+        for (int i=0;i<boolsmhasx.length;i++){
+            boolsmhasx[i] = false;
+        }
+        for (int i=0;i<boolss4hasx.length;i++){
+            boolsmhasx[i] = false;
+        }
+
+
         //display characters that the/each person got
         Intent intent = getIntent();
-        ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
+        final ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
 
         int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee
         int p_num = intent.getIntExtra("players", 2);
@@ -38,16 +47,35 @@ public class Results extends AppCompatActivity {
             linearLayout.setId(j + 100);
             int l = j*c_num; //0, 0, 2, 2
             for (int i = 0; i < c_num; i++) {
-                ImageView image = new ImageView(Results.this);
-                if (x == 0)
+                final ImageView image = new ImageView(Results.this);
+                if (x == 0) {
                     image.setImageResource(mThumbIdss4[chars.get(l)]); //0, 1, 2, 3
-                else
+                    image.setId(100 + i);
+                }
+                else {
                     image.setImageResource(mThumbIdsm[chars.get(l)]);
+                    final int finalL = l;
+                    image.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (boolsmhasx[finalL])
+                                image.setImageResource(mThumbIdsmx[chars.get(finalL)]);
+                            else
+                                image.setImageResource(mThumbIdsm[chars.get(finalL)]);
+                            boolsmhasx[finalL] = !boolsmhasx[finalL];
+                        }
+                    });
+                }
+
+
                 LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(300, 300);
                 image.setLayoutParams(layoutParams);
                 linearLayout.addView(image);
                 l++;
             }
+
+            //now set on click listeenrs for all of the dynamically created images, so we can change the pictures to and from X's
+
 
 
             HorizontalScrollView scroll = new HorizontalScrollView(this);
@@ -110,4 +138,26 @@ public class Results extends AppCompatActivity {
             R.drawable.roym, R.drawable.marthm,
             R.drawable.mrgnwm
     };
+
+    private Integer[] mThumbIdsmx = {
+            R.drawable.mariom, R.drawable.luigim,
+            R.drawable.yoshim, R.drawable.donkeykongm,
+            R.drawable.linkm, R.drawable.samusm,
+            R.drawable.kirbym, R.drawable.foxm,
+            R.drawable.pikachum, R.drawable.jigglypuffm,
+            R.drawable.nessm, R.drawable.peachm,
+            R.drawable.younglinkm, R.drawable.bowsermx,
+            R.drawable.ganonm, R.drawable.drmariom,
+            R.drawable.sheikm, R.drawable.zeldam,
+            R.drawable.falcom, R.drawable.mewtwom,
+            R.drawable.pichum, R.drawable.iceclimbersm,
+            R.drawable.roym, R.drawable.marthm,
+            R.drawable.mrgnwm
+    };
+
+
+    private boolean[] boolsmhasx = new boolean[26]; //fix this number
+    private boolean[] boolss4hasx = new boolean[57]; //fix this number
+
+
 }
