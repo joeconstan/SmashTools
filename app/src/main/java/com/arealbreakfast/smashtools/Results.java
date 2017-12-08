@@ -35,7 +35,7 @@ public class Results extends AppCompatActivity {
         Intent intent = getIntent();
         final ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
 
-        int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee
+        int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee, 2 - pm, 3 - brawl
         int p_num = intent.getIntExtra("players", 2);
         int c_num = chars.size()/p_num; //num of chars per person
 
@@ -62,7 +62,7 @@ public class Results extends AppCompatActivity {
                         }
                     });
                 }
-                else {
+                else if (x==1){
                     image.setImageResource(mThumbIdsm[chars.get(l)]);
                     final int finalL = l;
                     image.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +73,34 @@ public class Results extends AppCompatActivity {
                             else
                                 image.setImageResource(mThumbIdsm[chars.get(finalL)]);
                             boolsmhasx[finalL] = !boolsmhasx[finalL];
+                        }
+                    });
+                }
+                else if (x==2){
+                    image.setImageResource(mThumbIdspm[chars.get(l)]);
+                    final int finalL = l;
+                    image.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!boolspmhasx[finalL])
+                                image.setImageResource(mThumbIdspmx[chars.get(finalL)]);
+                            else
+                                image.setImageResource(mThumbIdspm[chars.get(finalL)]);
+                            boolspmhasx[finalL] = !boolspmhasx[finalL];
+                        }
+                    });
+                }
+                else if (x==3){
+                    image.setImageResource(mThumbIdsb[chars.get(l)]);
+                    final int finalL = l;
+                    image.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!boolsbhasx[finalL])
+                                image.setImageResource(mThumbIdsbx[chars.get(finalL)]);
+                            else
+                                image.setImageResource(mThumbIdsb[chars.get(finalL)]);
+                            boolsbhasx[finalL] = !boolsbhasx[finalL];
                         }
                     });
                 }
@@ -102,7 +130,7 @@ public class Results extends AppCompatActivity {
     }
 
 
-    private Integer[] mThumbIdss4 = {//missing the dks
+    private Integer[] mThumbIdss4 = {
             R.drawable.bayo, R.drawable.bowser,
             R.drawable.bowserjr, R.drawable.captainfalcon,
             R.drawable.charizard, R.drawable.cloud,
@@ -135,7 +163,7 @@ public class Results extends AppCompatActivity {
     };
 
 
-    private Integer[] mThumbIdss4x = {//missing the dks
+    private Integer[] mThumbIdss4x = {
             R.drawable.bayox, R.drawable.bowserx,
             R.drawable.bowserjrx, R.drawable.captainfalconx,
             R.drawable.charizardx, R.drawable.cloudx,
@@ -202,8 +230,115 @@ public class Results extends AppCompatActivity {
     };
 
 
+
+
+
+    private Integer[] mThumbIdspm = {
+            R.drawable.bowserpm, R.drawable.captainfalconpm,
+            R.drawable.charizardpm, R.drawable.diddypm,
+            R.drawable.donkeykongpm, R.drawable.falcopm,
+            R.drawable.falcopm, R.drawable.foxpm,
+            R.drawable.ganonpm, R.drawable.iceclimberspm,
+            R.drawable.ikepm, R.drawable.ivysaurpm,
+            R.drawable.kingdddpm, R.drawable.kirbypm,
+            R.drawable.linkpm, R.drawable.lucariopm,
+            R.drawable.lucaspm, R.drawable.luigipm,
+            R.drawable.mariopm, R.drawable.marthpm,
+            R.drawable.metaknightpm, R.drawable.mewtwopm,
+            R.drawable.mrgnwpm, R.drawable.nesspm,
+            R.drawable.olimarpm, R.drawable.peachpm,
+            R.drawable.pikachupm, R.drawable.pitpm,
+            R.drawable.puffpm, R.drawable.robpm,
+            R.drawable.roypm, R.drawable.samuspm,
+            R.drawable.sheikpm, R.drawable.snakepm,
+            R.drawable.sonicpm, R.drawable.squirtlepm,
+            R.drawable.toonlinkpm, R.drawable.wariopm,
+            R.drawable.wolfpm, R.drawable.yoshipm,
+            R.drawable.zeldapm, R.drawable.zsspm
+    };
+
+
+    private Integer[] mThumbIdspmx = {
+            R.drawable.bowserpmx, R.drawable.captainfalconpmx,
+            R.drawable.charizardpmx, R.drawable.diddypmx,
+            R.drawable.donkeykongpmx, R.drawable.falcopmx,
+            R.drawable.falcopmx, R.drawable.foxpmx,
+            R.drawable.ganonpmx, R.drawable.iceclimberspmx,
+            R.drawable.ikepmx, R.drawable.ivysaurpmx,
+            R.drawable.kingdddpmx, R.drawable.kirbypmx,
+            R.drawable.linkpmx, R.drawable.lucariopmx,
+            R.drawable.lucaspmx, R.drawable.luigipmx,
+            R.drawable.mariopmx, R.drawable.marthpmx,
+            R.drawable.metaknightpmx, R.drawable.mewtwopmx,
+            R.drawable.mrgnwpmx, R.drawable.nesspmx,
+            R.drawable.olimarpmx, R.drawable.peachpmx,
+            R.drawable.pikachupmx, R.drawable.pitpmx,
+            R.drawable.puffpmx, R.drawable.robpmx,
+            R.drawable.roypmx, R.drawable.samuspmx,
+            R.drawable.sheikpmx, R.drawable.snakepmx,
+            R.drawable.sonicpmx, R.drawable.squirtlepmx,
+            R.drawable.toonlinkpmx, R.drawable.wariopmx,
+            R.drawable.wolfpmx, R.drawable.yoshipmx,
+            R.drawable.zeldapmx, R.drawable.zsspmx
+    };
+
+
+    private Integer[] mThumbIdsb = {
+            R.drawable.bowserpm, R.drawable.captainfalconpm,
+            R.drawable.charizardpm, R.drawable.diddypm,
+            R.drawable.donkeykongpm, R.drawable.falcopm,
+            R.drawable.falcopm, R.drawable.foxpm,
+            R.drawable.ganonpm, R.drawable.iceclimberspm,
+            R.drawable.ikepm, R.drawable.ivysaurpm,
+            R.drawable.kingdddpm, R.drawable.kirbypm,
+            R.drawable.linkpm, R.drawable.lucariopm,
+            R.drawable.lucaspm, R.drawable.luigipm,
+            R.drawable.mariopm, R.drawable.marthpm,
+            R.drawable.metaknightpm, R.drawable.mrgnwpm,
+            R.drawable.nesspm, R.drawable.olimarpm,
+            R.drawable.peachpm, R.drawable.pikachupm,
+            R.drawable.pitpm, R.drawable.puffpm,
+            R.drawable.robpm, R.drawable.samuspm,
+            R.drawable.sheikpm, R.drawable.snakepm,
+            R.drawable.sonicpm, R.drawable.squirtlepm,
+            R.drawable.toonlinkpm, R.drawable.wariopm,
+            R.drawable.wolfpm, R.drawable.yoshipm,
+            R.drawable.zeldapm, R.drawable.zsspm
+    };
+
+
+    private Integer[] mThumbIdsbx = {
+            R.drawable.bowserpmx, R.drawable.captainfalconpmx,
+            R.drawable.charizardpmx, R.drawable.diddypmx,
+            R.drawable.donkeykongpmx, R.drawable.falcopmx,
+            R.drawable.falcopmx, R.drawable.foxpmx,
+            R.drawable.ganonpmx, R.drawable.iceclimberspmx,
+            R.drawable.ikepmx, R.drawable.ivysaurpmx,
+            R.drawable.kingdddpmx, R.drawable.kirbypmx,
+            R.drawable.linkpmx, R.drawable.lucariopmx,
+            R.drawable.lucaspmx, R.drawable.luigipmx,
+            R.drawable.mariopmx, R.drawable.marthpmx,
+            R.drawable.metaknightpmx, R.drawable.mrgnwpmx,
+            R.drawable.nesspmx, R.drawable.olimarpmx,
+            R.drawable.peachpmx, R.drawable.pikachupmx,
+            R.drawable.pitpmx, R.drawable.puffpmx,
+            R.drawable.robpmx, R.drawable.samuspmx,
+            R.drawable.sheikpmx, R.drawable.snakepmx,
+            R.drawable.sonicpmx, R.drawable.squirtlepmx,
+            R.drawable.toonlinkpmx, R.drawable.wariopmx,
+            R.drawable.wolfpmx, R.drawable.yoshipmx,
+            R.drawable.zeldapmx, R.drawable.zsspmx
+    };
+
+
+
+
+
+
     private boolean[] boolsmhasx = new boolean[26]; //fix this number
     private boolean[] boolss4hasx = new boolean[57]; //fix this number
+    private boolean[] boolspmhasx = new boolean[42];//fix this number
+    private boolean[] boolsbhasx = new boolean[40];//fix this number
 
 
 }

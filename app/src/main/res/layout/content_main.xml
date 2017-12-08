@@ -19,7 +19,7 @@
         android:layout_height="100dp"
         android:onClick="Smash4IM"
         android:text="Smash 4 Iron Man"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:background="@drawable/smashfourbackground"
         />
 
@@ -33,7 +33,7 @@
         android:onClick="MeleeIM"
         android:text="Melee Iron Man"
         android:textColor="#FFFFFF"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:background="@drawable/meleebackground"
         />
 
@@ -47,9 +47,8 @@
         android:layout_marginTop="5dp"
         android:onClick="ProjectMIM"
         android:text="Project M Iron Man"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        android:background="@drawable/meleebackground"
+        android:textSize="30dp"
+        android:background="@drawable/pmbackground"
         />
 
     <Button
@@ -62,7 +61,7 @@
         android:onClick="BrawlIM"
         android:text="Brawl Iron Man"
         android:textColor="#FFFFFF"
-        android:textSize="20dp"
+        android:textSize="30dp"
         android:background="@drawable/meleebackground"
         />
 
