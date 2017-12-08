@@ -10,6 +10,14 @@
             android:id="@+id/nav_meleeIM"
             android:icon="@drawable/meleeimicon"
             android:title="Melee Ironman" />
+        <item
+            android:id="@+id/nav_pmIM"
+            android:icon="@drawable/pmicon"
+            android:title="Project M Ironman" />
+        <item
+            android:id="@+id/nav_brawlIM"
+            android:icon="@drawable/brawlicon"
+            android:title="Brawl Ironman" />
     </group>
 
 

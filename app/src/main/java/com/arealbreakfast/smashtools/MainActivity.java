@@ -113,6 +113,12 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_meleeIM) {
             Intent intent = new Intent(this, MeleeIronMan.class);
             startActivity(intent);
+        }else if (id == R.id.nav_pmIM) {
+            Intent intent = new Intent(this, ProjectMIronMan.class);
+            startActivity(intent);
+        }else if (id == R.id.nav_brawlIM) {
+            Intent intent = new Intent(this, BrawlIronMan.class);
+            startActivity(intent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

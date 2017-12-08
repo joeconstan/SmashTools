@@ -15,54 +15,95 @@
     <Button
         android:id="@+id/s4IMButton"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="100dp"
         android:onClick="Smash4IM"
-        android:text="Smash 4 Iron Man"
-        android:textSize="30dp"
-        android:background="@drawable/smashfourbackground"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="60dp"
+        android:background="@drawable/smash4imicon2"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Smash 4 ironman"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_below="@+id/s4IMButton"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="10dp"
         />
 
     <Button
         android:id="@+id/mIMButton"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/s4IMButton"
-        android:layout_marginTop="5dp"
+        android:layout_marginRight="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="50dp"
         android:onClick="MeleeIM"
-        android:text="Melee Iron Man"
+        android:background="@drawable/meleeimicon"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Melee ironman"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:background="@drawable/meleebackground"
+        android:textSize="15sp"
+        android:layout_below="@+id/mIMButton"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="10dp"
         />
 
 
     <Button
         android:id="@+id/pmIMButton"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/mIMButton"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/s4IMButton"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="60dp"
         android:onClick="ProjectMIM"
-        android:text="Project M Iron Man"
-        android:textSize="30dp"
-        android:background="@drawable/pmbackground"
+        android:background="@drawable/pmicon"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PM ironman"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:layout_below="@+id/pmIMButton"
+        android:layout_marginLeft="67dp"
+        android:layout_marginTop="10dp"
         />
 
     <Button
         android:id="@+id/bIMButton"
         style="@style/Widget.AppCompat.Button.Borderless"
-        android:layout_width="match_parent"
+        android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_below="@+id/pmIMButton"
-        android:layout_marginTop="5dp"
+        android:layout_marginRight="60dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="110dp"
+        android:layout_below="@id/mIMButton"
         android:onClick="BrawlIM"
-        android:text="Brawl Iron Man"
+        android:background="@drawable/brawlicon"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brawl ironman"
         android:textColor="#FFFFFF"
-        android:textSize="30dp"
-        android:background="@drawable/meleebackground"
+        android:textSize="15sp"
+        android:layout_below="@+id/pmIMButton"
+        android:layout_marginLeft="205dp"
+        android:layout_marginTop="10dp"
         />
 
 
