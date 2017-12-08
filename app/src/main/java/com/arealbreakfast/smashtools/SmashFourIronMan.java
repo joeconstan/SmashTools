@@ -10,16 +10,28 @@ import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class SmashFourIronMan extends AppCompatActivity {
 
 
+    private AdView mAdView;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_smashfourironman);
+
+        MobileAds.initialize(this, "ca-app-pub-4831792107942934~4522194056");
+
+        mAdView = (AdView) findViewById(R.id.adView_2);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
 
         final TextView numplayer = (TextView) findViewById(R.id.s4imnumber_play);
         final TextView numchar = (TextView) findViewById(R.id.s4imnumber_char);
@@ -100,6 +112,12 @@ public class SmashFourIronMan extends AppCompatActivity {
         intent.putExtra("players", Integer.parseInt(numplayer.getText().toString()));
         intent.putExtra("type", 0);
 
+        startActivity(intent);
+    }
+
+    public void ManualEnter(View view){
+        Intent intent = new Intent(this, ManualEnter.class);
+        intent.putExtra("type", 0); //legend in results.java
         startActivity(intent);
     }
 

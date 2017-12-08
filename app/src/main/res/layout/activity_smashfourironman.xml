@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="110dp"
         android:text="Character #:"
         android:textSize="25sp" />
 
@@ -70,7 +70,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/s4imnumber_char_title"
         android:layout_marginLeft="60dp"
-        android:layout_marginTop="130dp"
+        android:layout_marginTop="110dp"
         android:text="Player #:"
         android:textSize="25sp" />
 
@@ -122,9 +122,31 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/miicheck"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:onClick="Start"
-        android:text="Start" />
+        android:text="Start Random" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Manually"
+        android:layout_below="@+id/s4imstart_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:onClick="ManualEnter"
+        />
+
+    <com.google.android.gms.ads.AdView
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-4831792107942934/7657022654">
+    </com.google.android.gms.ads.AdView>
+
 
 
 </RelativeLayout>

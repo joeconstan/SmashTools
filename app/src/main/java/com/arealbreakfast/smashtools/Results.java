@@ -10,6 +10,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 
@@ -63,13 +65,16 @@ public class Results extends AppCompatActivity {
                 if (x == 0) {
                     if (intent.getIntExtra("mii", 1) == 0) {
                         image.setImageResource(mThumbIdss4lmii[chars.get(l)]); //0, 1, 2, 3
+                        //Picasso.with(Results.this).load(mThumbIdss4lmii[chars.get(l)]).into(image);
                         final int finalL = l;
                         image.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
                                 if (!boolss4lmiihasx.get(finalL))
+                                    //Picasso.with(Results.this).load(mThumbIdss4xlmii[chars.get(finalL)]).into(image);
                                     image.setImageResource(mThumbIdss4xlmii[chars.get(finalL)]);
                                 else
+                                    //Picasso.with(Results.this).load(mThumbIdss4lmii[chars.get(finalL)]).into(image);
                                     image.setImageResource(mThumbIdss4lmii[chars.get(finalL)]);
                                 boolss4lmiihasx.set(finalL, !boolss4lmiihasx.get(finalL));
                             }
