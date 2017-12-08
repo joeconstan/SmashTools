@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.arealbreakfast.smashtools.UserSettings"
+    android:background="@drawable/background1"
+    >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here you can set the default amount of characters and players you would like to be set."
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:id="@+id/settingsMainTitle"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        />
+
+
+    <TextView
+        android:layout_below="@+id/settingsMainTitle"
+        android:id="@+id/settingscharnumtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="100dp"
+        android:text="Character #:"
+        android:textSize="30sp" />
+
+
+    <ImageButton
+        android:id="@+id/increase_char"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/settingsnumberchar"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="246dp"
+        android:src="@drawable/ic_action_name" />
+
+
+    <TextView
+        android:id="@+id/settingsnumberchar"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/settingscharnumtitle"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/settingscharnumtitle"
+        android:text="5"
+        android:textSize="30sp" />
+
+
+    <ImageButton
+        android:id="@+id/decrease_char"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/settingsnumberchar"
+        android:layout_marginLeft="246dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/arrow_down" />
+
+
+    <TextView
+        android:id="@+id/settingsplaynumtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/settingscharnumtitle"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="150dp"
+        android:text="Player #:"
+        android:textSize="30sp" />
+
+
+    <ImageButton
+        android:id="@+id/increase_play"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/settingsnumberplay"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="246dp"
+        android:src="@drawable/ic_action_name" />
+
+    <TextView
+        android:id="@+id/settingsnumberplay"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/settingsplaynumtitle"
+        android:layout_alignStart="@+id/settingsnumberchar"
+        android:inputType="number"
+        android:text="2"
+        android:textSize="30sp" />
+
+
+    <ImageButton
+        android:id="@+id/decrease_play"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/settingsnumberplay"
+        android:layout_marginLeft="246dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/arrow_down" />
+
+
+    <Button
+        android:id="@+id/mimstart_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/settingsnumberplay"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"
+        android:onClick="Save"
+        android:text="Save Settings" />
+
+
+
+
+
+
+</RelativeLayout>

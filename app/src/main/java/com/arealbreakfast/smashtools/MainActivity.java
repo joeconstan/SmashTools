@@ -1,7 +1,10 @@
 package com.arealbreakfast.smashtools;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -82,7 +85,7 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        //getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
 
@@ -94,8 +97,29 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_info) {
+            AlertDialog.Builder builder;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                builder = new AlertDialog.Builder(MainActivity.this, android.R.style.Theme_Material_Dialog_Alert);
+            } else {
+                builder = new AlertDialog.Builder(MainActivity.this);
+            }
+            builder.setTitle("Info")
+                    .setMessage("Welcome to Smash Tools! Right now, this is an app for creating random ironmans." +
+                            "\nOnce your characters have been selected, you can click on any one of them to mark them as used, and click again to remove the marker." +
+                            "\n\nCredit for images:\nNintendo, ssbwiki.com\n")
+                    .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // continue with delete
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
             return true;
+        }
+        else if (id == R.id.action_settings){
+            Intent intent = new Intent(this, UserSettings.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);
@@ -113,10 +137,10 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_meleeIM) {
             Intent intent = new Intent(this, MeleeIronMan.class);
             startActivity(intent);
-        }else if (id == R.id.nav_pmIM) {
+        } else if (id == R.id.nav_pmIM) {
             Intent intent = new Intent(this, ProjectMIronMan.class);
             startActivity(intent);
-        }else if (id == R.id.nav_brawlIM) {
+        } else if (id == R.id.nav_brawlIM) {
             Intent intent = new Intent(this, BrawlIronMan.class);
             startActivity(intent);
         }
