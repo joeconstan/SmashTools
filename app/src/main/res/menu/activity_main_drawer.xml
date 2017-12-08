@@ -19,6 +19,12 @@
             android:icon="@drawable/brawlicon"
             android:title="Brawl Ironman" />
     </group>
+    <group  android:id="@+id/second_section" android:checkableBehavior="all">
+        <item
+            android:id="@+id/nav_removeAds"
+            android:icon="@drawable/ic_removeadstwo"
+            android:title="Remove Ads" />
+    </group>
 
 
 </menu>
