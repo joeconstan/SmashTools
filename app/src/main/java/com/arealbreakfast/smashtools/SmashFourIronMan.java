@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -67,6 +68,7 @@ public class SmashFourIronMan extends AppCompatActivity {
 
 
     public void Start(View view) {
+        CheckBox mii = (CheckBox) findViewById(R.id.miicheck);
         TextView numplayer = (TextView) findViewById(R.id.s4imnumber_play);
         //pick characters randomly and display in Results activity
         TextView numchar = (TextView) findViewById(R.id.s4imnumber_char);
@@ -85,6 +87,9 @@ public class SmashFourIronMan extends AppCompatActivity {
 
 
         Intent intent = new Intent(view.getContext(), Results.class);
+        if (!mii.isChecked()){
+            intent.putExtra("mii", 0);
+        }
         intent.putExtra("chars", chosen_chars);
         intent.putExtra("players", Integer.parseInt(numplayer.getText().toString()));
         intent.putExtra("type", 0);

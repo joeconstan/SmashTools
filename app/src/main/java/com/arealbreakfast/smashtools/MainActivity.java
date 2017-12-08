@@ -58,6 +58,16 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void ProjectMIM(View view) {
+        Intent intent = new Intent(view.getContext(), ProjectMIronMan.class);
+        startActivity(intent);
+    }
+
+    public void BrawlIM(View view) {
+        Intent intent = new Intent(view.getContext(), BrawlIronMan.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onBackPressed() {
