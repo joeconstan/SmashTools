@@ -78,7 +78,7 @@ public class ProjectMIronMan extends AppCompatActivity {
 
         while (chosen_chars.size() < x * y) {
             //pick a new character
-            ranNum = randomGenerator.nextInt(25);
+            ranNum = randomGenerator.nextInt(42);
             if (!chosen_chars.contains(ranNum))
                 chosen_chars.add(ranNum);
         }
