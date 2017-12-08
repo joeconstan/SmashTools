@@ -78,7 +78,7 @@ public class BrawlIronMan extends AppCompatActivity {
 
         while (chosen_chars.size() < x * y) {
             //pick a new character
-            ranNum = randomGenerator.nextInt(25);
+            ranNum = randomGenerator.nextInt(40);
             if (!chosen_chars.contains(ranNum))
                 chosen_chars.add(ranNum);
         }

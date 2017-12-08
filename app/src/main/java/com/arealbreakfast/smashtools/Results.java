@@ -23,12 +23,6 @@ public class Results extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
 
-        for (int i = 0; i < boolsmhasx.length; i++) {
-            boolsmhasx[i] = false;
-        }
-        for (int i = 0; i < boolss4hasx.length; i++) {
-            boolss4hasx[i] = false;
-        }
 
 
         //display characters that the/each person got
@@ -38,6 +32,24 @@ public class Results extends AppCompatActivity {
         int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee, 2 - pm, 3 - brawl
         int p_num = intent.getIntExtra("players", 2);
         int c_num = chars.size() / p_num; //num of chars per person
+
+
+        for (int i = 0; i < c_num * p_num; i++) {
+            boolss4hasx.add(false);
+        }
+        for (int i = 0; i < c_num * p_num; i++) {
+            boolss4lmiihasx.add(false);
+        }
+        for (int i = 0; i < c_num * p_num; i++) {
+            boolsmhasx.add(false);
+        }
+        for (int i = 0; i < c_num * p_num; i++) {
+            boolspmhasx.add(false);
+        }
+        for (int i = 0; i < c_num * p_num; i++) {
+            boolsbhasx.add(false);
+        }
+
 
         //dynamically create linear layouts and images for them depending on player num and character num
         LinearLayout parentlinlay = (LinearLayout) findViewById(R.id.parentlinlay);
@@ -55,11 +67,11 @@ public class Results extends AppCompatActivity {
                         image.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                if (!boolss4lmiihasx[finalL])
+                                if (!boolss4lmiihasx.get(finalL))
                                     image.setImageResource(mThumbIdss4xlmii[chars.get(finalL)]);
                                 else
                                     image.setImageResource(mThumbIdss4lmii[chars.get(finalL)]);
-                                boolss4lmiihasx[finalL] = !boolss4lmiihasx[finalL];
+                                boolss4lmiihasx.set(finalL, !boolss4lmiihasx.get(finalL));
                             }
                         });
                     } else {
@@ -68,11 +80,11 @@ public class Results extends AppCompatActivity {
                         image.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
-                                if (!boolss4hasx[finalL])
+                                if (!boolss4hasx.get(finalL))
                                     image.setImageResource(mThumbIdss4x[chars.get(finalL)]);
                                 else
                                     image.setImageResource(mThumbIdss4[chars.get(finalL)]);
-                                boolss4hasx[finalL] = !boolss4hasx[finalL];
+                                boolss4hasx.set(finalL, !boolss4hasx.get(finalL));
                             }
                         });
                     }
@@ -82,11 +94,11 @@ public class Results extends AppCompatActivity {
                     image.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (!boolsmhasx[finalL])
+                            if (!boolsmhasx.get(finalL))
                                 image.setImageResource(mThumbIdsmx[chars.get(finalL)]);
                             else
                                 image.setImageResource(mThumbIdsm[chars.get(finalL)]);
-                            boolsmhasx[finalL] = !boolsmhasx[finalL];
+                            boolsmhasx.set(finalL, !boolsmhasx.get(finalL));
                         }
                     });
                 } else if (x == 2) {
@@ -95,11 +107,11 @@ public class Results extends AppCompatActivity {
                     image.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (!boolspmhasx[finalL])
+                            if (!boolspmhasx.get(finalL))
                                 image.setImageResource(mThumbIdspmx[chars.get(finalL)]);
                             else
                                 image.setImageResource(mThumbIdspm[chars.get(finalL)]);
-                            boolspmhasx[finalL] = !boolspmhasx[finalL];
+                            boolspmhasx.set(finalL, !boolspmhasx.get(finalL));
                         }
                     });
                 } else if (x == 3) {
@@ -108,11 +120,11 @@ public class Results extends AppCompatActivity {
                     image.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            if (!boolsbhasx[finalL])
+                            if (!boolsbhasx.get(finalL))
                                 image.setImageResource(mThumbIdsbx[chars.get(finalL)]);
                             else
                                 image.setImageResource(mThumbIdsb[chars.get(finalL)]);
-                            boolsbhasx[finalL] = !boolsbhasx[finalL];
+                            boolsbhasx.set(finalL, !boolsbhasx.get(finalL));
                         }
                     });
                 }
@@ -141,7 +153,7 @@ public class Results extends AppCompatActivity {
     }
 
 
-    private Integer[] mThumbIdss4 = {
+    private Integer[] mThumbIdss4 = { //#-58
             R.drawable.bayo, R.drawable.bowser,
             R.drawable.bowserjr, R.drawable.captainfalcon,
             R.drawable.charizard, R.drawable.cloud,
@@ -207,7 +219,7 @@ public class Results extends AppCompatActivity {
     };
 
 
-    private Integer[] mThumbIdss4lmii = {
+    private Integer[] mThumbIdss4lmii = { //#-55
             R.drawable.bayo, R.drawable.bowser,
             R.drawable.bowserjr, R.drawable.captainfalcon,
             R.drawable.charizard, R.drawable.cloud,
@@ -271,7 +283,7 @@ public class Results extends AppCompatActivity {
     };
 
 
-    private Integer[] mThumbIdsm = {
+    private Integer[] mThumbIdsm = { //#-25
             R.drawable.mariom, R.drawable.luigim,
             R.drawable.yoshim, R.drawable.donkeykongm,
             R.drawable.linkm, R.drawable.samusm,
@@ -304,7 +316,7 @@ public class Results extends AppCompatActivity {
     };
 
 
-    private Integer[] mThumbIdspm = {
+    private Integer[] mThumbIdspm = { //#-42
             R.drawable.bowserpm, R.drawable.captainfalconpm,
             R.drawable.charizardpm, R.drawable.diddypm,
             R.drawable.donkeykongpm, R.drawable.falcopm,
@@ -354,7 +366,7 @@ public class Results extends AppCompatActivity {
     };
 
 
-    private Integer[] mThumbIdsb = {
+    private Integer[] mThumbIdsb = { //#-40
             R.drawable.bowserpm, R.drawable.captainfalconpm,
             R.drawable.charizardpm, R.drawable.diddypm,
             R.drawable.donkeykongpm, R.drawable.falcopm,
@@ -402,11 +414,11 @@ public class Results extends AppCompatActivity {
     };
 
 
-    private boolean[] boolsmhasx = new boolean[26]; //fix this number
-    private boolean[] boolss4hasx = new boolean[57]; //fix this number
-    private boolean[] boolss4lmiihasx = new boolean[54]; //fix this number
-    private boolean[] boolspmhasx = new boolean[42];//fix this number
-    private boolean[] boolsbhasx = new boolean[40];//fix this number
+    private ArrayList<Boolean> boolss4hasx = new ArrayList<>(0);
+    private ArrayList<Boolean> boolsmhasx = new ArrayList<>(0);
+    private ArrayList<Boolean> boolss4lmiihasx = new ArrayList<>(0);
+    private ArrayList<Boolean> boolspmhasx = new ArrayList<>(0);
+    private ArrayList<Boolean> boolsbhasx = new ArrayList<>(0);
 
 
 }

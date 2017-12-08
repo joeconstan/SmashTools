@@ -77,17 +77,23 @@ public class SmashFourIronMan extends AppCompatActivity {
         ArrayList<Integer> chosen_chars = new ArrayList<>(1);
         Random randomGenerator = new Random();
         int ranNum;
-
-        while (chosen_chars.size() < x * y) {
-            //pick a new character
-            ranNum = randomGenerator.nextInt(56);
-            if (!chosen_chars.contains(ranNum))
+        if (mii.isChecked()) {
+            while (chosen_chars.size() < x * y) {
+                //pick a new character
+                ranNum = randomGenerator.nextInt(58); //generates rand #'s 0-57
                 chosen_chars.add(ranNum);
+            }
+        } else {
+            while (chosen_chars.size() < x * y) {
+                //pick a new character
+                ranNum = randomGenerator.nextInt(55);
+                chosen_chars.add(ranNum);
+            }
         }
 
 
         Intent intent = new Intent(view.getContext(), Results.class);
-        if (!mii.isChecked()){
+        if (!mii.isChecked()) {
             intent.putExtra("mii", 0);
         }
         intent.putExtra("chars", chosen_chars);
