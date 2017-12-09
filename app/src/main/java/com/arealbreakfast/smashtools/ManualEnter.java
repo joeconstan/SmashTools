@@ -48,7 +48,7 @@ public class ManualEnter extends AppCompatActivity {
         else if (type == 1) {
             for (int i = allCharacters.size()-1; i >= 0; i--) {
                 if (allCharacters.get(i) == position) {
-                    allCharacters.remove(Integer.valueOf(position)); //todo: gets rid of the wrong one still
+                    allCharacters.remove(i);
                     break;
                 }
             }
