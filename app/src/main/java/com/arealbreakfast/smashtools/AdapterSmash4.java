@@ -18,7 +18,7 @@ public class AdapterSmash4 extends BaseAdapter {
     public AdapterSmash4(Context c) {
         mContext = c;
         for (int i = 0; i < 58; i++) {
-            boolss4hasx.add(false);
+            boolss4hasy.add(false);
         }
     }
 
@@ -58,11 +58,15 @@ public class AdapterSmash4 extends BaseAdapter {
         image.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!boolss4hasx.get(position))
+                if (!boolss4hasy.get(position)) {
                     image.setImageResource(mThumbIdss4y[position]);
-                else
-                    image.setImageResource(mThumbIdss4[position]);
-                boolss4hasx.set(position, !boolss4hasx.get(position));
+                    ((ManualEnter)mContext).onClickOutside(position, 0); //add it to selected characters //0 means add, 1 means delete
+                }
+                else {
+                    image.setImageResource(mThumbIdss4[position]); //todo: need to remove from selected chars if this happens
+                    ((ManualEnter)mContext).onClickOutside(position, 1);
+                }
+                boolss4hasy.set(position, !boolss4hasy.get(position));
             }
         });
 
@@ -133,6 +137,6 @@ public class AdapterSmash4 extends BaseAdapter {
             R.drawable.wfty, R.drawable.yoshiy,
             R.drawable.zelday, R.drawable.zssy
     };
-    private ArrayList<Boolean> boolss4hasx = new ArrayList<>(0);
+    private ArrayList<Boolean> boolss4hasy = new ArrayList<>(0);
 
 }

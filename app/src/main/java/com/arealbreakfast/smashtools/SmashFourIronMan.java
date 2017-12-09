@@ -118,6 +118,9 @@ public class SmashFourIronMan extends AppCompatActivity {
     public void ManualEnter(View view){
         Intent intent = new Intent(this, ManualEnter.class);
         intent.putExtra("type", 0); //legend in results.java
+        ArrayList<Integer> allCharacters = new ArrayList<>(0);
+        intent.putIntegerArrayListExtra("allCharacters", allCharacters);
+        intent.putExtra("numPlayers", 0);
         startActivity(intent);
     }
 
