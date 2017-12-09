@@ -16,10 +16,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.android.billingclient.api.BillingClient;
-import com.android.billingclient.api.BillingClientStateListener;
-import com.android.billingclient.api.Purchase;
-import com.android.billingclient.api.PurchasesUpdatedListener;
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
@@ -30,8 +27,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private AdView mAdView;
-    private BillingClient mBillingClient;
-    private PurchasesUpdatedListener mlistener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,39 +51,6 @@ public class MainActivity extends AppCompatActivity
         mAdView = (AdView) findViewById(R.id.adView_1);
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
-
-        //billing library functions
-        mlistener = new PurchasesUpdatedListener() {
-            @Override
-            public void onPurchasesUpdated(int responseCode, @Nullable List<Purchase> purchases) {
-                if (responseCode == BillingClient.BillingResponse.OK
-                        && purchases != null) {
-                    for (Purchase purchase : purchases) {
-                        //handlePurchase(purchase);
-                    }
-                } else if (responseCode == BillingClient.BillingResponse.USER_CANCELED) {
-                    // Handle an error caused by a user cancelling the purchase flow.
-                } else {
-                    // Handle any other error codes.
-                }
-            }
-        };
-
-        mBillingClient = BillingClient.newBuilder(MainActivity.this).setListener(mlistener).build();
-        mBillingClient.startConnection(new BillingClientStateListener() {
-            @Override
-            public void onBillingSetupFinished(@BillingClient.BillingResponse int billingResponseCode) {
-                if (billingResponseCode == BillingClient.BillingResponse.OK) {
-                    // The billing client is ready. You can query purchases here.
-                }
-            }
-
-            @Override
-            public void onBillingServiceDisconnected() {//todo: override this. very important according to google documentation
-                // Try to restart the connection on the next request to
-                // Google Play by calling the startConnection() method.
-            }
-        });
 
 
     }
@@ -184,8 +146,6 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_brawlIM) {
             Intent intent = new Intent(this, BrawlIronMan.class);
             startActivity(intent);
-        } else if (id == R.id.nav_removeAds){
-            //todo: ads. use shared prefs to remember? and make the intialize ads in oncreate conditional
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

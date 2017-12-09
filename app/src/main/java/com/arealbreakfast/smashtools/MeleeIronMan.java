@@ -9,15 +9,25 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 
 public class MeleeIronMan extends AppCompatActivity {
+
+    private AdView mAdView;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meleeironman);
+
+        mAdView = (AdView) findViewById(R.id.adView_3);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
 
         final TextView numplayer = (TextView) findViewById(R.id.mimnumber_play);

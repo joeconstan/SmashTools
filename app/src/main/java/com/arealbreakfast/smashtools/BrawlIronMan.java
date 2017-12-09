@@ -7,16 +7,24 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.util.ArrayList;
 import java.util.Random;
 
 public class BrawlIronMan extends AppCompatActivity {
+
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_brawl_iron_man);
 
+        mAdView = (AdView) findViewById(R.id.adView_5);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
 
         final TextView numplayer = (TextView) findViewById(R.id.bimnumber_play);
         final TextView numchar = (TextView) findViewById(R.id.bimnumber_char);
@@ -60,7 +68,6 @@ public class BrawlIronMan extends AppCompatActivity {
                 numchar.setText(String.valueOf(n));
             }
         });
-
 
 
     }

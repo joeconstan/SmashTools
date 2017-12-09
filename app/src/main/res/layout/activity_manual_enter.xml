@@ -1,27 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:numColumns="5"
     android:background="@drawable/background1"
+    >
 
 
-    tools:context="com.arealbreakfast.smashtools.ManualEnter">
-
-    <LinearLayout
-        android:id="@+id/manenterrel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        >
-
-
-        <!-- <Button
-             android:id="@+id/manual_enter_start_button"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_marginBottom="80dp"
-             android:text="Start" />-->
-
-    </LinearLayout>
-</LinearLayout>
+</GridView>
