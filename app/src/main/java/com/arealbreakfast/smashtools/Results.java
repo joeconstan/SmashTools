@@ -26,7 +26,6 @@ public class Results extends AppCompatActivity {
         setContentView(R.layout.activity_results);
 
 
-
         //display characters that the/each person got
         Intent intent = getIntent();
         final ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
@@ -59,7 +58,7 @@ public class Results extends AppCompatActivity {
             Log.v(TAG, "p_num: " + p_num + " c_num: " + c_num + "\n");
             LinearLayout linearLayout = new LinearLayout(this);
             linearLayout.setId(j + 100);
-            int l = j * c_num; //0, 0, 2, 2
+            int l = j * c_num;
             for (int i = 0; i < c_num; i++) {
                 final ImageView image = new ImageView(Results.this);
                 if (x == 0) {
@@ -288,44 +287,44 @@ public class Results extends AppCompatActivity {
     };
 
 
-    private Integer[] mThumbIdsm = { //#-25
-            R.drawable.mariom, R.drawable.luigim,
-            R.drawable.yoshim, R.drawable.donkeykongm,
-            R.drawable.linkm, R.drawable.samusm,
-            R.drawable.kirbym, R.drawable.foxm,
-            R.drawable.pikachum, R.drawable.jigglypuffm,
+    private Integer[] mThumbIdsm = { //#-26
+            R.drawable.bowserm, R.drawable.captainfalconm,
+            R.drawable.donkeykongm, R.drawable.drmariom,
+            R.drawable.falcom, R.drawable.foxm,
+            R.drawable.ganonm, R.drawable.iceclimbersm,
+            R.drawable.jigglypuffm, R.drawable.kirbym,
+            R.drawable.linkm, R.drawable.luigim,
+            R.drawable.mariom, R.drawable.marthm,
+            R.drawable.mewtwom, R.drawable.mrgnwm,
             R.drawable.nessm, R.drawable.peachm,
-            R.drawable.younglinkm, R.drawable.bowserm,
-            R.drawable.ganonm, R.drawable.drmariom,
-            R.drawable.sheikm, R.drawable.zeldam,
-            R.drawable.falcom, R.drawable.mewtwom,
-            R.drawable.pichum, R.drawable.iceclimbersm,
-            R.drawable.roym, R.drawable.marthm,
-            R.drawable.mrgnwm
+            R.drawable.pichum, R.drawable.pikachum,
+            R.drawable.roym, R.drawable.samusm,
+            R.drawable.sheikm, R.drawable.yoshim,
+            R.drawable.younglinkm, R.drawable.zeldam
     };
 
     private Integer[] mThumbIdsmx = {
-            R.drawable.mariomx, R.drawable.luigimx,
-            R.drawable.yoshimx, R.drawable.donkeykongmx,
-            R.drawable.linkmx, R.drawable.samusmx,
-            R.drawable.kirbymx, R.drawable.foxmx,
-            R.drawable.pikachumx, R.drawable.jigglypuffmx,
+            R.drawable.bowsermx, R.drawable.captainfalconmx,
+            R.drawable.donkeykongmx, R.drawable.drmariomx,
+            R.drawable.falcomx, R.drawable.foxmx,
+            R.drawable.ganonmx, R.drawable.iceclimbersmx,
+            R.drawable.jigglypuffmx, R.drawable.kirbymx,
+            R.drawable.linkmx, R.drawable.luigimx,
+            R.drawable.mariomx, R.drawable.marthmx,
+            R.drawable.mewtwomx, R.drawable.mrgnwmx,
             R.drawable.nessmx, R.drawable.peachmx,
-            R.drawable.younglinkmx, R.drawable.bowsermx,
-            R.drawable.ganonmx, R.drawable.drmariomx,
-            R.drawable.sheikmx, R.drawable.zeldamx,
-            R.drawable.falcomx, R.drawable.mewtwomx,
-            R.drawable.pichumx, R.drawable.iceclimbersmx,
-            R.drawable.roymx, R.drawable.marthmx,
-            R.drawable.mrgnwmx
+            R.drawable.pichumx, R.drawable.pikachumx,
+            R.drawable.roymx, R.drawable.samusmx,
+            R.drawable.sheikmx, R.drawable.yoshimx,
+            R.drawable.younglinkmx, R.drawable.zeldamx
     };
 
 
-    private Integer[] mThumbIdspm = { //#-42
+    private Integer[] mThumbIdspm = { //#-41
             R.drawable.bowserpm, R.drawable.captainfalconpm,
             R.drawable.charizardpm, R.drawable.diddypm,
             R.drawable.donkeykongpm, R.drawable.falcopm,
-            R.drawable.falcopm, R.drawable.foxpm,
+            R.drawable.foxpm,
             R.drawable.ganonpm, R.drawable.iceclimberspm,
             R.drawable.ikepm, R.drawable.ivysaurpm,
             R.drawable.kingdddpm, R.drawable.kirbypm,
@@ -350,7 +349,7 @@ public class Results extends AppCompatActivity {
             R.drawable.bowserpmx, R.drawable.captainfalconpmx,
             R.drawable.charizardpmx, R.drawable.diddypmx,
             R.drawable.donkeykongpmx, R.drawable.falcopmx,
-            R.drawable.falcopmx, R.drawable.foxpmx,
+            R.drawable.foxpmx,
             R.drawable.ganonpmx, R.drawable.iceclimberspmx,
             R.drawable.ikepmx, R.drawable.ivysaurpmx,
             R.drawable.kingdddpmx, R.drawable.kirbypmx,
@@ -371,11 +370,11 @@ public class Results extends AppCompatActivity {
     };
 
 
-    private Integer[] mThumbIdsb = { //#-40
+    private Integer[] mThumbIdsb = { //#-39
             R.drawable.bowserpm, R.drawable.captainfalconpm,
             R.drawable.charizardpm, R.drawable.diddypm,
             R.drawable.donkeykongpm, R.drawable.falcopm,
-            R.drawable.falcopm, R.drawable.foxpm,
+            R.drawable.foxpm,
             R.drawable.ganonpm, R.drawable.iceclimberspm,
             R.drawable.ikepm, R.drawable.ivysaurpm,
             R.drawable.kingdddpm, R.drawable.kirbypm,
@@ -399,7 +398,7 @@ public class Results extends AppCompatActivity {
             R.drawable.bowserpmx, R.drawable.captainfalconpmx,
             R.drawable.charizardpmx, R.drawable.diddypmx,
             R.drawable.donkeykongpmx, R.drawable.falcopmx,
-            R.drawable.falcopmx, R.drawable.foxpmx,
+            R.drawable.foxpmx,
             R.drawable.ganonpmx, R.drawable.iceclimberspmx,
             R.drawable.ikepmx, R.drawable.ivysaurpmx,
             R.drawable.kingdddpmx, R.drawable.kirbypmx,

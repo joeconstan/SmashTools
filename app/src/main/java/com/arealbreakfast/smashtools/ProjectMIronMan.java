@@ -1,6 +1,8 @@
 package com.arealbreakfast.smashtools;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,7 +26,7 @@ public class ProjectMIronMan extends AppCompatActivity {
 
 
         mAdView = (AdView) findViewById(R.id.adView_4);
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("4A51EAF0C631CA74D07FC7762D27FCD0").build();
         mAdView.loadAd(adRequest);
 
 
@@ -34,6 +36,21 @@ public class ProjectMIronMan extends AppCompatActivity {
         ImageButton decplay = (ImageButton) findViewById(R.id.decrease_play);
         ImageButton incchar = (ImageButton) findViewById(R.id.increase_char);
         ImageButton decchar = (ImageButton) findViewById(R.id.decrease_char);
+
+
+        //check if they have set preferences, set them if so
+        SharedPreferences sharedPref = getSharedPreferences(
+                getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        int defaultValue = 100;
+        int prefPlay = sharedPref.getInt("prefPlay", defaultValue);
+        int prefChar = sharedPref.getInt("prefChar", defaultValue);
+        if (prefPlay != defaultValue) {
+            numplayer.setText(String.valueOf(prefPlay));
+        }
+        if (prefChar != defaultValue) {
+            numchar.setText(String.valueOf(prefChar));
+        }
+
 
         incplay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,9 +104,8 @@ public class ProjectMIronMan extends AppCompatActivity {
 
         while (chosen_chars.size() < x * y) {
             //pick a new character
-            ranNum = randomGenerator.nextInt(42);
-            if (!chosen_chars.contains(ranNum))
-                chosen_chars.add(ranNum);
+            ranNum = randomGenerator.nextInt(41);
+            chosen_chars.add(ranNum);
         }
 
 
@@ -100,4 +116,14 @@ public class ProjectMIronMan extends AppCompatActivity {
         startActivity(intent);
 
     }
+
+    public void ManualEnter(View view) {
+        Intent intent = new Intent(this, ManualEnter.class);
+        intent.putExtra("type", 2); //legend in results.java
+        ArrayList<Integer> allCharacters = new ArrayList<>(0);
+        intent.putIntegerArrayListExtra("allCharacters", allCharacters);
+        intent.putExtra("numPlayers", 0);
+        startActivity(intent);
+    }
+
 }

@@ -63,7 +63,7 @@ public class AdapterSmash4 extends BaseAdapter {
                     ((ManualEnter)mContext).onClickOutside(position, 0); //add it to selected characters //0 means add, 1 means delete
                 }
                 else {
-                    image.setImageResource(mThumbIdss4[position]); //todo: need to remove from selected chars if this happens
+                    image.setImageResource(mThumbIdss4[position]);
                     ((ManualEnter)mContext).onClickOutside(position, 1);
                 }
                 boolss4hasy.set(position, !boolss4hasy.get(position));

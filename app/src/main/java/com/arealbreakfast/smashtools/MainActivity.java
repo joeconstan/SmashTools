@@ -21,7 +21,6 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
-import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity
@@ -47,9 +46,8 @@ public class MainActivity extends AppCompatActivity
 
 
         MobileAds.initialize(this, "ca-app-pub-4831792107942934~4522194056");
-
         mAdView = (AdView) findViewById(R.id.adView_1);
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("4A51EAF0C631CA74D07FC7762D27FCD0").build();
         mAdView.loadAd(adRequest);
 
 
