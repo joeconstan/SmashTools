@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/gridView"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:numColumns="5"
+    android:layout_height="wrap_content"
     android:background="@drawable/background1"
-    >
+    android:orientation="vertical">
 
 
-</GridView>
+    <GridView
+        android:id="@+id/gridView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="5">
+
+    </GridView>
+
+
+    <Button
+        android:id="@+id/ManEntNextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/ManEntStartButton"
+        android:layout_alignParentBottom="true"
+        android:onClick="Next"
+        android:text="Next" />
+
+
+    <Button
+        android:id="@+id/ManEntStartButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="Start"
+        android:text="Start" />
+
+</RelativeLayout>
