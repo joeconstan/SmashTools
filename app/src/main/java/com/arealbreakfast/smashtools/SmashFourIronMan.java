@@ -17,7 +17,9 @@ import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.Set;
 
 public class SmashFourIronMan extends AppCompatActivity {
 
@@ -107,8 +109,8 @@ public class SmashFourIronMan extends AppCompatActivity {
         Random randomGenerator = new Random();
         int ranNum;
         if (mii.isChecked()) {
-            while (chosen_chars.size() < x * y) {
-                //pick a new character
+            while (chosen_chars.size() < x * y) { //todo: need to not allow repeats for same person, UNLESS there are over 58*people characters requested. also it just doesnt work. repeats are still allowed.
+                //pick a new characters
                 ranNum = randomGenerator.nextInt(58); //generates rand #'s 0-57
                 chosen_chars.add(ranNum);
             }
@@ -117,6 +119,18 @@ public class SmashFourIronMan extends AppCompatActivity {
                 //pick a new character
                 ranNum = randomGenerator.nextInt(55);
                 chosen_chars.add(ranNum);
+            }
+            HashSet<Integer> set = new HashSet<>(); //outer for loop ends prematurely, either set.add is throwing something or the condition is met, but it must be the first one..
+            for (int i = x, p=1; i < (x * y); i += x, p++) { //make sure no one person got the same character twice. turn each section into hash set. if not same size, add another element and check again.
+                for (int j = i-x; j < x*p; j++) { //todo: the bug is in one of these for loop declarations, I'm pretty sure. write it out. welp, still no good. trace it.
+                    set.add(chosen_chars.get(j)); //only did one iteration of the outer loop
+                }
+                while (set.size()< x){ //if the hashset is a different size, we had a duplicate, so add another
+                    ranNum = randomGenerator.nextInt(55);
+                    if (set.add(ranNum))
+                        chosen_chars.add(ranNum);
+                }
+                set.clear();
             }
         }
 
