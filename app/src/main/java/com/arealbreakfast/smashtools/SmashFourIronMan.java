@@ -109,26 +109,45 @@ public class SmashFourIronMan extends AppCompatActivity {
         Random randomGenerator = new Random();
         int ranNum;
         if (mii.isChecked()) {
-            while (chosen_chars.size() < x * y) { //todo: need to not allow repeats for same person, UNLESS there are over 58*people characters requested. also it just doesnt work. repeats are still allowed.
+            while (chosen_chars.size() < x * y) { //todo: allow repeats if over max characters selected
                 //pick a new characters
                 ranNum = randomGenerator.nextInt(58); //generates rand #'s 0-57
                 chosen_chars.add(ranNum);
             }
+            HashSet<Integer> set = new HashSet<>();
+            for (int i = x, p = 1; i <= (x * y); i += x, p++) { //make sure no one person got the same character twice. turn each section into hash set. if not same size, add another element and check again.
+                for (int j = i - x; j < x * p; j++) {
+                    set.add(chosen_chars.get(j));
+                }
+                while (set.size() < x) { //if the hashset is a different size, we had a duplicate, so add another
+                    ranNum = randomGenerator.nextInt(58);
+                    if (set.add(ranNum)) {//not clearing chosen chars
+                        int counter = i - x; //replace the chosen_chars with our hash set, as the hash set is the same but with the duplicate randomly replaced
+                        for (int h : set) {
+                            chosen_chars.remove(counter);
+                            chosen_chars.add(counter, h);
+                            counter++;
+                        }
+                    }
+                }
+                set.clear();
+            }
+
         } else {
             while (chosen_chars.size() < x * y) {
                 //pick a new character
                 ranNum = randomGenerator.nextInt(55);
                 chosen_chars.add(ranNum);
             }
-            HashSet<Integer> set = new HashSet<>(); //todo: fuckin only iterated once again
+            HashSet<Integer> set = new HashSet<>();
             for (int i = x, p = 1; i <= (x * y); i += x, p++) { //make sure no one person got the same character twice. turn each section into hash set. if not same size, add another element and check again.
-                for (int j = i - x; j < x * p; j++) { //todo: adding wrong ones?
+                for (int j = i - x; j < x * p; j++) {
                     set.add(chosen_chars.get(j));
                 }
                 while (set.size() < x) { //if the hashset is a different size, we had a duplicate, so add another
                     ranNum = randomGenerator.nextInt(55);
                     if (set.add(ranNum)) {//not clearing chosen chars
-                        int counter = i - x; //works with x=8 y=2
+                        int counter = i - x; //replace the chosen_chars with our hash set, as the hash set is the same but with the duplicate randomly replaced
                         for (int h : set) {
                             chosen_chars.remove(counter);
                             chosen_chars.add(counter, h);
