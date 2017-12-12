@@ -120,15 +120,21 @@ public class SmashFourIronMan extends AppCompatActivity {
                 ranNum = randomGenerator.nextInt(55);
                 chosen_chars.add(ranNum);
             }
-            HashSet<Integer> set = new HashSet<>(); //outer for loop ends prematurely, either set.add is throwing something or the condition is met, but it must be the first one..
-            for (int i = x, p=1; i < (x * y); i += x, p++) { //make sure no one person got the same character twice. turn each section into hash set. if not same size, add another element and check again.
-                for (int j = i-x; j < x*p; j++) { //todo: the bug is in one of these for loop declarations, I'm pretty sure. write it out. welp, still no good. trace it.
-                    set.add(chosen_chars.get(j)); //only did one iteration of the outer loop
+            HashSet<Integer> set = new HashSet<>(); //todo: fuckin only iterated once again
+            for (int i = x, p = 1; i <= (x * y); i += x, p++) { //make sure no one person got the same character twice. turn each section into hash set. if not same size, add another element and check again.
+                for (int j = i - x; j < x * p; j++) { //todo: adding wrong ones?
+                    set.add(chosen_chars.get(j));
                 }
-                while (set.size()< x){ //if the hashset is a different size, we had a duplicate, so add another
+                while (set.size() < x) { //if the hashset is a different size, we had a duplicate, so add another
                     ranNum = randomGenerator.nextInt(55);
-                    if (set.add(ranNum))
-                        chosen_chars.add(ranNum);
+                    if (set.add(ranNum)) {//not clearing chosen chars
+                        int counter = i - x; //works with x=8 y=2
+                        for (int h : set) {
+                            chosen_chars.remove(counter);
+                            chosen_chars.add(counter, h);
+                            counter++;
+                        }
+                    }
                 }
                 set.clear();
             }
