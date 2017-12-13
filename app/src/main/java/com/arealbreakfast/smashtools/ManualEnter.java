@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -46,6 +47,12 @@ public class ManualEnter extends AppCompatActivity {
             final GridView gridView = (GridView) findViewById(R.id.gridView);
             final AdapterBrawl adapterBrawl= new AdapterBrawl(this);
             gridView.setAdapter(adapterBrawl);
+        }
+        else if (type == 4) { //64
+            //let them search for characters and it adds it to a list
+            final GridView gridView = (GridView) findViewById(R.id.gridView);
+            final AdapterSixtyFour adapterSixtyFour= new AdapterSixtyFour(this);
+            gridView.setAdapter(adapterSixtyFour);
         }
 
 
