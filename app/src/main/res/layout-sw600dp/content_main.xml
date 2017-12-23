@@ -108,7 +108,7 @@
         android:layout_marginRight="255dp"
         android:layout_marginTop="80dp"
         android:background="@drawable/sficon"
-        android:onClick="BrawlIM" />
+        android:onClick="SixtyFourIM" />
 
     <TextView
         android:layout_width="wrap_content"

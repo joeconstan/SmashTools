@@ -29,7 +29,8 @@
         android:layout_marginTop="5dp"
         android:text="Smash 4 ironman"
         android:textColor="#FFFFFF"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/textView" />
 
     <Button
         android:id="@+id/mIMButton"
@@ -97,28 +98,25 @@
         android:text="Brawl ironman"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
+
     <Button
         android:id="@+id/sfIMButton"
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/mIMButton"
-        android:layout_marginRight="135dp"
-        android:layout_marginTop="45dp"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
         android:background="@drawable/sficon"
-        android:onClick="BrawlIM" />
+        android:onClick="SixtyFourIM" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_below="@+id/sfIMButton"
-        android:layout_marginRight="145dp"
-        android:layout_marginTop="5dp"
+        android:layout_alignTop="@+id/bIMButton"
+        android:layout_centerHorizontal="true"
         android:text="64 ironman"
         android:textColor="#FFFFFF"
-        android:layout_centerHorizontal="true"
         android:textSize="15sp" />
 
 

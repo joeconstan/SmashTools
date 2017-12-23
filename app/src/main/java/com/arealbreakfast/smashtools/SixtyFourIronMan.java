@@ -26,7 +26,7 @@ public class SixtyFourIronMan extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sixty_four_iron_man);
+        setContentView(R.layout.activity_sixtyfourironman);
 
 
         //MobileAds.initialize(this, "ca-app-pub-4831792107942934~4522194056");
@@ -97,7 +97,6 @@ public class SixtyFourIronMan extends AppCompatActivity {
 
 
     public void Start(View view) {
-        CheckBox mii = (CheckBox) findViewById(R.id.miicheck);
         TextView numplayer = (TextView) findViewById(R.id.s4imnumber_play);
         //pick characters randomly and display in Results activity
         TextView numchar = (TextView) findViewById(R.id.s4imnumber_char);
@@ -106,62 +105,31 @@ public class SixtyFourIronMan extends AppCompatActivity {
         ArrayList<Integer> chosen_chars = new ArrayList<>(1);
         Random randomGenerator = new Random();
         int ranNum;
-        if (mii.isChecked()) {
-            while (chosen_chars.size() < x * y) { //todo: allow repeats if over max characters selected
-                //pick a new characters
-                ranNum = randomGenerator.nextInt(58); //generates rand #'s 0-57
-                chosen_chars.add(ranNum);
-            }
-            HashSet<Integer> set = new HashSet<>();
-            for (int i = x, p = 1; i <= (x * y); i += x, p++) { //make sure no one person got the same character twice. turn each section into hash set. if not same size, add another element and check again.
-                for (int j = i - x; j < x * p; j++) {
-                    set.add(chosen_chars.get(j));
-                }
-                while (set.size() < x) { //if the hashset is a different size, we had a duplicate, so add another
-                    ranNum = randomGenerator.nextInt(58);
-                    if (set.add(ranNum)) {//not clearing chosen chars
-                        int counter = i - x; //replace the chosen_chars with our hash set, as the hash set is the same but with the duplicate randomly replaced
-                        for (int h : set) {
-                            chosen_chars.remove(counter);
-                            chosen_chars.add(counter, h);
-                            counter++;
-                        }
-                    }
-                }
-                set.clear();
-            }
-
-        } else {
-            while (chosen_chars.size() < x * y) {
-                //pick a new character
-                ranNum = randomGenerator.nextInt(55);
-                chosen_chars.add(ranNum);
-            }
-            HashSet<Integer> set = new HashSet<>();
-            for (int i = x, p = 1; i <= (x * y); i += x, p++) { //make sure no one person got the same character twice. turn each section into hash set. if not same size, add another element and check again.
-                for (int j = i - x; j < x * p; j++) {
-                    set.add(chosen_chars.get(j));
-                }
-                while (set.size() < x) { //if the hashset is a different size, we had a duplicate, so add another
-                    ranNum = randomGenerator.nextInt(55);
-                    if (set.add(ranNum)) {//not clearing chosen chars
-                        int counter = i - x; //replace the chosen_chars with our hash set, as the hash set is the same but with the duplicate randomly replaced
-                        for (int h : set) {
-                            chosen_chars.remove(counter);
-                            chosen_chars.add(counter, h);
-                            counter++;
-                        }
-                    }
-                }
-                set.clear();
-            }
+        while (chosen_chars.size() < x * y) { //todo: allow repeats if over max characters selected
+            //pick a new characters
+            ranNum = randomGenerator.nextInt(12); //generates rand #'s 0-12
+            chosen_chars.add(ranNum);
         }
-
+        HashSet<Integer> set = new HashSet<>();
+        for (int i = x, p = 1; i <= (x * y); i += x, p++) { //make sure no one person got the same character twice. turn each section into hash set. if not same size, add another element and check again.
+            for (int j = i - x; j < x * p; j++) {
+                set.add(chosen_chars.get(j));
+            }
+            while (set.size() < x) { //if the hashset is a different size, we had a duplicate, so add another
+                ranNum = randomGenerator.nextInt(58);
+                if (set.add(ranNum)) {//not clearing chosen chars
+                    int counter = i - x; //replace the chosen_chars with our hash set, as the hash set is the same but with the duplicate randomly replaced
+                    for (int h : set) {
+                        chosen_chars.remove(counter);
+                        chosen_chars.add(counter, h);
+                        counter++;
+                    }
+                }
+            }
+            set.clear();
+        }
 
         Intent intent = new Intent(view.getContext(), Results.class);
-        if (!mii.isChecked()) {
-            intent.putExtra("mii", 0);
-        }
         intent.putExtra("chars", chosen_chars);
         intent.putExtra("players", Integer.parseInt(numplayer.getText().toString()));
         intent.putExtra("type", 4);

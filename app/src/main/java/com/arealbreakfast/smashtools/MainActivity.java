@@ -73,6 +73,11 @@ public class MainActivity extends AppCompatActivity
         startActivity(intent);
     }
 
+    public void SixtyFourIM(View view){
+        Intent intent = new Intent(view.getContext(), SixtyFourIronMan.class);
+        startActivity(intent);
+    }
+
 
     @Override
     public void onBackPressed() {
