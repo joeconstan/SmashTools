@@ -144,7 +144,11 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_brawlIM) {
             Intent intent = new Intent(this, BrawlIronMan.class);
             startActivity(intent);
+        } else if (id == R.id.nav_64IM) {
+            Intent intent = new Intent(this, SixtyFourIronMan.class);
+            startActivity(intent);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

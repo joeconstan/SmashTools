@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1">
+
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:orientation="vertical"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar">
+
+        <TextView
+            android:id="@+id/toolbartext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="4dp"
+            android:text="Smash 64 Ironman"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/sfimnumber_char_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="110dp"
+        android:text="Character #:"
+        android:textSize="25sp" />
+
+
+    <ImageButton
+        android:id="@+id/increase_char"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/sfimnumber_char"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="246dp"
+        android:src="@drawable/ic_action_name" />
+
+
+    <TextView
+        android:id="@+id/sfimnumber_char"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/sfimnumber_char_title"
+        android:layout_alignBottom="@+id/sfimnumber_char_title"
+        android:layout_marginLeft="254dp"
+        android:text="5"
+        android:textSize="25sp" />
+
+
+    <ImageButton
+        android:id="@+id/decrease_char"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/sfimnumber_char"
+        android:layout_marginLeft="246dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/arrow_down" />
+
+
+    <TextView
+        android:id="@+id/sfimnumber_play_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sfimnumber_char_title"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="110dp"
+        android:text="Player #:"
+        android:textSize="25sp" />
+
+
+    <ImageButton
+        android:id="@+id/increase_play"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_above="@+id/sfimnumber_play"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="246dp"
+        android:src="@drawable/ic_action_name" />
+
+    <TextView
+        android:id="@+id/sfimnumber_play"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/sfimnumber_play_title"
+        android:layout_alignStart="@+id/sfimnumber_char"
+        android:inputType="number"
+        android:text="2"
+        android:textSize="25sp" />
+
+
+    <ImageButton
+        android:id="@+id/decrease_play"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/sfimnumber_play"
+        android:layout_marginLeft="246dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/arrow_down" />
+
+
+    <Button
+        android:id="@+id/sfimstart_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sfimnumber_play"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:onClick="Start"
+        android:text="Start Random" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sfimstart_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:onClick="ManualEnter"
+        android:text="Enter Manually" />
+
+    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/adView_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="ca-app-pub-4831792107942934/7482825896"> </com.google.android.gms.ads.AdView>
+
+</RelativeLayout>

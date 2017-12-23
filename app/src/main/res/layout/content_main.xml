@@ -15,8 +15,8 @@
         style="@style/Widget.AppCompat.Button.Borderless"
         android:layout_width="130dp"
         android:layout_height="100dp"
-        android:layout_marginLeft="35dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/smash4imicon2"
         android:onClick="Smash4IM" />
 
@@ -25,8 +25,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/s4IMButton"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
         android:text="Smash 4 ironman"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
@@ -37,8 +37,8 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_alignParentEnd="true"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/meleeimicon"
         android:onClick="MeleeIM" />
 
@@ -47,8 +47,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/mIMButton"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
         android:text="Melee ironman"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
@@ -60,8 +60,8 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_below="@+id/s4IMButton"
-        android:layout_marginLeft="45dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/pmicon"
         android:onClick="ProjectMIM" />
 
@@ -69,8 +69,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/pmIMButton"
-        android:layout_marginLeft="52dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="5dp"
         android:text="PM ironman"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
@@ -82,8 +82,8 @@
         android:layout_height="100dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@id/mIMButton"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="180dp"
         android:background="@drawable/brawlicon"
         android:onClick="BrawlIM" />
 
@@ -92,9 +92,31 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/bIMButton"
-        android:layout_marginRight="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"
         android:text="Brawl ironman"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+
+    <Button
+        android:id="@+id/sfIMButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/s4IMButton"
+        android:layout_marginLeft="145dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/sficon"
+        android:onClick="ProjectMIM" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sfIMButton"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="5dp"
+        android:text="64 ironman"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
 
