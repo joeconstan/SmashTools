@@ -27,7 +27,8 @@
         <activity android:name=".ProjectMIronMan" />
         <activity android:name=".BrawlIronMan" />
         <activity android:name=".UserSettings" />
-        <activity android:name=".ManualEnter"></activity>
+        <activity android:name=".ManualEnter" />
+        <activity android:name=".SixtyFourIronMan"></activity>
     </application>
 
 </manifest>

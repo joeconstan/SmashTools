@@ -1,12 +1,11 @@
 package com.arealbreakfast.smashtools;
 
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
@@ -19,23 +18,22 @@ import com.google.android.gms.ads.MobileAds;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
-import java.util.Set;
 
-public class SmashFourIronMan extends AppCompatActivity {
-
+public class SixtyFourIronMan extends AppCompatActivity {
 
     private AdView mAdView;
 
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_smashfourironman);
+        setContentView(R.layout.activity_sixty_four_iron_man);
 
-        MobileAds.initialize(this, "ca-app-pub-4831792107942934~4522194056");
 
-        mAdView = (AdView) findViewById(R.id.adView_2);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("4A51EAF0C631CA74D07FC7762D27FCD0").build();
-        mAdView.loadAd(adRequest);
+        //MobileAds.initialize(this, "ca-app-pub-4831792107942934~4522194056");
+
+        //mAdView = (AdView) findViewById(R.id.adView_2);
+        // AdRequest adRequest = new AdRequest.Builder().addTestDevice("4A51EAF0C631CA74D07FC7762D27FCD0").build();
+        //mAdView.loadAd(adRequest);
 
 
         final TextView numplayer = (TextView) findViewById(R.id.s4imnumber_play);
@@ -166,7 +164,7 @@ public class SmashFourIronMan extends AppCompatActivity {
         }
         intent.putExtra("chars", chosen_chars);
         intent.putExtra("players", Integer.parseInt(numplayer.getText().toString()));
-        intent.putExtra("type", 0);
+        intent.putExtra("type", 4);
 
         startActivity(intent);
     }
@@ -179,5 +177,6 @@ public class SmashFourIronMan extends AppCompatActivity {
         intent.putExtra("numPlayers", 0);
         startActivity(intent);
     }
+
 
 }

@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
                 builder = new AlertDialog.Builder(MainActivity.this);
             }
             builder.setTitle("Info")
-                    .setMessage("Welcome to Smash Tools! Right now, this is an app for creating random ironmans." +
+                    .setMessage("Welcome to Smash Tools! This is an app for creating ironmans." +
                             "\nOnce your characters have been selected, you can click on any one of them to mark them as used, and click again to remove the marker." +
                             "\n\nCredit for images:\nNintendo, ssbwiki.com\n")
                     .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {

@@ -9,7 +9,6 @@
     tools:context="com.arealbreakfast.smashtools.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-
     <Button
         android:id="@+id/s4IMButton"
         style="@style/Widget.AppCompat.Button.Borderless"

@@ -30,26 +30,20 @@ public class Results extends AppCompatActivity {
         Intent intent = getIntent();
         final ArrayList<Integer> chars = intent.getIntegerArrayListExtra("chars");
 
-        int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee, 2 - pm, 3 - brawl
+        int x = intent.getIntExtra("type", 0); //0 - smash4, 1 - melee, 2 - pm, 3 - brawl, 4 - 64
         int p_num = intent.getIntExtra("players", 2);
         int c_num = chars.size() / p_num; //num of chars per person
 
 
         for (int i = 0; i < c_num * p_num; i++) {
             boolss4hasx.add(false);
-        }
-        for (int i = 0; i < c_num * p_num; i++) {
             boolss4lmiihasx.add(false);
-        }
-        for (int i = 0; i < c_num * p_num; i++) {
             boolsmhasx.add(false);
-        }
-        for (int i = 0; i < c_num * p_num; i++) {
             boolspmhasx.add(false);
-        }
-        for (int i = 0; i < c_num * p_num; i++) {
             boolsbhasx.add(false);
+            bools64hasx.add(false);
         }
+
 
 
         //dynamically create linear layouts and images for them depending on player num and character num
@@ -129,6 +123,19 @@ public class Results extends AppCompatActivity {
                             else
                                 image.setImageResource(mThumbIdsb[chars.get(finalL)]);
                             boolsbhasx.set(finalL, !boolsbhasx.get(finalL));
+                        }
+                    });
+                } else if (x == 4) {
+                    image.setImageResource(mThumbIds64[chars.get(l)]);
+                    final int finalL = l;
+                    image.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            if (!bools64hasx.get(finalL))
+                                image.setImageResource(mThumbIds64x[chars.get(finalL)]);
+                            else
+                                image.setImageResource(mThumbIds64[chars.get(finalL)]);
+                            bools64hasx.set(finalL, !bools64hasx.get(finalL));
                         }
                     });
                 }
@@ -418,11 +425,37 @@ public class Results extends AppCompatActivity {
     };
 
 
+
+
+
+
+    private Integer[] mThumbIds64 = { //#-12
+            R.drawable.captainfalconsf, R.drawable.donkeykongsf,
+            R.drawable.foxsf, R.drawable.kirbysf,
+            R.drawable.linksf, R.drawable.luigisf,
+            R.drawable.mariosf, R.drawable.nesssf,
+            R.drawable.pikachusf, R.drawable.puffsf,
+            R.drawable.samsussf, R.drawable.yoshisf
+    };
+
+
+    private Integer[] mThumbIds64x = {
+            R.drawable.captainfalconsfx, R.drawable.donkeykongsfx,
+            R.drawable.foxsfx, R.drawable.kirbysfx,
+            R.drawable.linksfx, R.drawable.luigisfx,
+            R.drawable.mariosfx, R.drawable.nesssfx,
+            R.drawable.pikachusfx, R.drawable.puffsfx,
+            R.drawable.samsussfx, R.drawable.yoshisfx
+    };
+
+
+
     private ArrayList<Boolean> boolss4hasx = new ArrayList<>(0);
     private ArrayList<Boolean> boolsmhasx = new ArrayList<>(0);
     private ArrayList<Boolean> boolss4lmiihasx = new ArrayList<>(0);
     private ArrayList<Boolean> boolspmhasx = new ArrayList<>(0);
     private ArrayList<Boolean> boolsbhasx = new ArrayList<>(0);
+    private ArrayList<Boolean> bools64hasx = new ArrayList<>(0);
 
 
 }
