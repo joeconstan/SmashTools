@@ -18,6 +18,10 @@
             android:id="@+id/nav_brawlIM"
             android:icon="@drawable/brawlicon"
             android:title="Brawl Ironman" />
+        <item
+            android:id="@+id/nav_64IM"
+            android:icon="@drawable/sficon"
+            android:title="64 Ironman" />
     </group>
 
 

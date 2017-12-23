@@ -61,7 +61,7 @@
         android:layout_height="100dp"
         android:layout_below="@+id/s4IMButton"
         android:layout_marginLeft="110dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="240dp"
         android:background="@drawable/pmicon"
         android:onClick="ProjectMIM" />
 
@@ -83,7 +83,7 @@
         android:layout_alignParentEnd="true"
         android:layout_below="@id/mIMButton"
         android:layout_marginRight="115dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="240dp"
         android:background="@drawable/brawlicon"
         android:onClick="BrawlIM" />
 
@@ -95,6 +95,29 @@
         android:layout_marginRight="115dp"
         android:layout_marginTop="10dp"
         android:text="Brawl ironman"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/sfIMButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@id/mIMButton"
+        android:layout_marginRight="255dp"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/sficon"
+        android:onClick="BrawlIM" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/sfIMButton"
+        android:layout_marginRight="255dp"
+        android:layout_marginTop="5dp"
+        android:text="64 ironman"
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
 
