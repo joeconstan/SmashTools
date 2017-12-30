@@ -36,8 +36,8 @@ public class SixtyFourIronMan extends AppCompatActivity {
         //mAdView.loadAd(adRequest);
 
 
-        final TextView numplayer = (TextView) findViewById(R.id.s4imnumber_play);
-        final TextView numchar = (TextView) findViewById(R.id.s4imnumber_char);
+        final TextView numplayer = (TextView) findViewById(R.id.sfimnumber_play);
+        final TextView numchar = (TextView) findViewById(R.id.sfimnumber_char);
         ImageButton incplay = (ImageButton) findViewById(R.id.increase_play);
         ImageButton decplay = (ImageButton) findViewById(R.id.decrease_play);
         ImageButton incchar = (ImageButton) findViewById(R.id.increase_char);
@@ -97,9 +97,9 @@ public class SixtyFourIronMan extends AppCompatActivity {
 
 
     public void Start(View view) {
-        TextView numplayer = (TextView) findViewById(R.id.s4imnumber_play);
+        TextView numplayer = (TextView) findViewById(R.id.sfimnumber_play);
         //pick characters randomly and display in Results activity
-        TextView numchar = (TextView) findViewById(R.id.s4imnumber_char);
+        TextView numchar = (TextView) findViewById(R.id.sfimnumber_char);
         int x = Integer.parseInt(numchar.getText().toString());
         int y = Integer.parseInt(numplayer.getText().toString());
         ArrayList<Integer> chosen_chars = new ArrayList<>(1);
@@ -116,7 +116,7 @@ public class SixtyFourIronMan extends AppCompatActivity {
                 set.add(chosen_chars.get(j));
             }
             while (set.size() < x) { //if the hashset is a different size, we had a duplicate, so add another
-                ranNum = randomGenerator.nextInt(58);
+                ranNum = randomGenerator.nextInt(12);
                 if (set.add(ranNum)) {//not clearing chosen chars
                     int counter = i - x; //replace the chosen_chars with our hash set, as the hash set is the same but with the duplicate randomly replaced
                     for (int h : set) {
@@ -139,7 +139,7 @@ public class SixtyFourIronMan extends AppCompatActivity {
 
     public void ManualEnter(View view) {
         Intent intent = new Intent(this, ManualEnter.class);
-        intent.putExtra("type", 0); //legend in results.java
+        intent.putExtra("type", 4); //legend in results.java
         ArrayList<Integer> allCharacters = new ArrayList<>(0);
         intent.putIntegerArrayListExtra("allCharacters", allCharacters);
         intent.putExtra("numPlayers", 0);

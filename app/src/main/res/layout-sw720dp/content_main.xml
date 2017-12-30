@@ -51,7 +51,8 @@
         android:layout_marginTop="50dp"
         android:text="Melee ironman"
         android:textColor="#FFFFFF"
-        android:textSize="15sp" />
+        android:textSize="15sp"
+        android:id="@+id/textView2" />
 
 
     <Button
@@ -98,6 +99,28 @@
         android:textColor="#FFFFFF"
         android:textSize="15sp" />
 
+    <Button
+        android:id="@+id/sfIMButton"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginLeft="350dp"
+        android:background="@drawable/sficon"
+        android:layout_marginTop="40dp"
+        android:onClick="SixtyFourIM" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/sfIMButton"
+        android:layout_marginRight="357dp"
+        android:layout_marginTop="50dp"
+        android:text="64 ironman"
+        android:textColor="#FFFFFF"
+        android:textSize="15sp"
+        android:id="@+id/textView3" />
 
     <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView_1"

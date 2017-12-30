@@ -103,7 +103,7 @@
         android:layout_height="100dp"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/mIMButton"
-        android:layout_marginRight="140dp"
+        android:layout_marginRight="130dp"
         android:layout_marginTop="45dp"
         android:background="@drawable/sficon"
         android:onClick="SixtyFourIM" />
@@ -113,7 +113,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_below="@+id/sfIMButton"
-        android:layout_marginRight="150dp"
+        android:layout_marginRight="140dp"
         android:layout_marginTop="5dp"
         android:text="64 ironman"
         android:textColor="#FFFFFF"
